@@ -1,48 +1,61 @@
-.form {
-    position: relative;
-}
 
-.bnt {
+
+
+
+.mega nav {
+    display: none;
     position: absolute;
-    padding: 1px 6px;
-}
-.menu .dropdownmenu{
+    width: 1300px;
+    background:#FFFFFF;
+    border: 1px solid #eaeaea;
+    padding: 10px;
     
-    width: 200px;
-    top:85px;
-    position:absolute;
-    background: white;
+}
+.mega:hover nav {
+    display: block;
 
-    line-height: 45px;
-    /* opacity: 0;
-    visibility: hidden; */
-    display: none;
+
 }
-li:hover .dropdownmenu{
-    top:40px;
-    /* opacity: 1;
-    visibility: visible; */
-    transition: all 0.3 ease;
-    display: block
+.megamenu li {
     
+    color: azure;
+    color: rgb(0, 0, 0);
+   
+    padding: 5px;
 }
-.menu{ display:flex}
-.megabox{
-    position:absolute;
-    margin-top: 5px;
-    /* padding: 0 2rem; */
-    width: 95%;
-    height: 350px;
-    padding: 20px;
+.mega li {
+    
+    color: azure;
+    color: rgb(0, 0, 0);
    
+    padding: 5px;
+}
+.hovermenu li {
+    
+    color: azure;
+    color: rgb(0, 0, 0);
    
-    background: white;
+    padding: 5px;
+}
+
+.hovermenu li:hover {
+    
+    color: rgb(99, 80, 130);
+    padding: 5px;
+    
+
+}
+
+.hovermenu:hover nav {
+    display: block;
+
+
+}
+.hovermenu nav {
     display: none;
-}
-.contenmenu {
-    display: flex;
-    justify-content: space-between;
-}
-li:hover .megabox{
-    display:block;
+    position: absolute;
+    width: fit-content;
+    background:#FFFFFF;
+    border: 1px solid #eaeaea;
+    padding: 10px;
 }
