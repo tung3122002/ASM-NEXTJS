@@ -6,81 +6,47 @@ type Props = {}
 
 const Header = (props: Props) => {
     return (
-        <div>
-            <div className="flex    leading-[50px]">
-                <div className={style.menu}>
-                    <ul className={style.menu}>
-                        <li className='p-2.5 text-xl font-mono'>
-                            <Link href=''>NỮ</Link>
-                            <div className={style.megabox}>
-                                <div className={style.contenmenu}>
-                                    <div className="row">
-                                        <header>Hàng nam mới về</header>
-                                        <ul className="megalink">
-                                            <li><Link href=''>Essential Sweatsuit Men</Link></li>
-                                        </ul>
-                                    </div>
-                                    <div className="row">
-                                        <header>Hàng nam mới về</header>
-                                        <ul className="megalink">
-                                            <li><Link href=''>Essential Sweatsuit Men</Link></li>
-                                        </ul>
-                                    </div>
-                                    <div className="row">
-                                        <header>Hàng nam mới về</header>
-                                        <ul className="megalink">
-                                            <li><Link href=''>Essential Sweatsuit Men</Link></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li className='p-2.5 text-xl font-mono '>
-                            <a href='' > NAM</a>
-                            <ul className={style.dropdownmenu}>
-                                <li className='p-2.5 text-xl font-mono'>
-                                    <Link href=''> TRẺ EM</Link>
-                                </li >
-                                <li className='p-2.5 text-xl font-mono'>
-                                    <Link href=''> TRẺ EM</Link>
-                                </li >
-                                <li className='p-2.5 text-xl font-mono'>
-                                    <Link href=''> TRẺ EM</Link>
-                                </li >
+        <div className=' relative mt-10 ' >
+            <nav className="fixed top-0 left-20 right-0 flex  bg-white w-full h-14  z-10 ">
+                <div>
+                    <ul className='flex leading-10'>
+                        
+
+                        
+                        <li className=" dropdown"data-toggle="dropdown"><a className=" no-underline text-[15px] text-[#212529]  font-semibold"  href="#">NỮ</a>
+                            <ul className='dropdown-menu'>
+                                <li><a className="dropdown-item" href="#">Action</a></li>
+                                <li><a className="dropdown-item" href="#">Another action</a></li>
+                                <li><a className="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
-                        <li className='p-2.5 text-xl font-mono'>
-                            <Link href=''> TRẺ EM</Link>
-                        </li >
-                        <li className='p-2.5 text-xl font-mono'>
-                            <Link href=''>ƯU ĐÃI THÁNG 5</Link>
-                        </li>
-                        <li className='p-2.5 text-xl font-mono'>
-                            <Link href=''>BỘ SƯU TẬP</Link>
-                        </li>
-                        <li className='p-2.5 text-xl font-mono'>
-                            <Link href=''>LIFESTYLE</Link>
-                        </li>
-                        <li className='p-2.5 text-xl font-mono'>
-                            <Link href=''>VỀ CHÚNG TÔI</Link>
-                        </li>
+                        <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">NAM</a></li>
+                        <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">TRẺ EM</a></li>
+                        <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">BỘ SƯ TẬP</a></li>
+                        <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">LIFESTYLE</a></li>
+                        <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">VỀ CHÚNG TÔI</a></li>
                     </ul>
+
                 </div>
-                <div className="logo items-center mx-auto w-[144px] ">
-                    <img className='' src="https://pubcdn2.ivymoda.com/images/logo.png" alt />
+                <div className=' items-center mx-auto w-[144px]'>
+                    <img src="https://pubcdn2.ivymoda.com/images/logo.png" alt="" />
                 </div>
-                <div className="user mx-auto">
-                    <form action='' className={style.form}>
-                        <button className={style.btn}><i className="fa-solid fa-magnifying-glass" /></button>
-                        <input className="seach border w-[240px] h-[40px] px-[30px] rounded-md" type="text" name id placeholder="TÌM KIẾM SẢN PHẨM" />
+                <div className="user mx-auto flex leading-10">
+                    <form action='' className='relative '>
+                        <button className='absolute top-0 left-2'><i className="fa-solid fa-magnifying-glass" /></button>
+                        <input className="seach border mr-10 right-4 w-[240px] h-[40px] px-[30px] rounded-md" type="text" name='' id='' placeholder="TÌM KIẾM SẢN PHẨM" />
                     </form>
+                    <div className="mr-14">
+                        <i className="fa-solid fa-cart-shopping pr-3" />
+                        <i className="fa-solid fa-user pr-3" />
+                        <i className="fa-solid fa-headphones pr-3" />
+                    </div>
+
+
+
                 </div>
-            </div>
-            <div className="flex  mx-auto h-12 leading-[48px] mt-3 text-sm">
-                <div className="w-1/3 text[22px] font-mono text-center bg-[#d73831] text-white "><a href>FREE SHIPPING ĐƠN HÀNG NGUYÊN GIÁ</a></div>
-                <div className="w-1/3 text[22px] font-mono text-center bg-[#9490A5] text-white"><a href>BẢO HÀNH TRỌN ĐỜI</a></div>
-                <div className="w-1/3  text[22px] font-mono text-center bg-[#AC2F33] text-white"><a href>CHÍNH SÁCH THẺ THÀNH VIÊN</a></div>
-            </div>
+
+            </nav>
         </div>
 
     )

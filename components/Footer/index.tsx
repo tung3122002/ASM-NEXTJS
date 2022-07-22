@@ -6,46 +6,54 @@ const Footer = (props: Props) => {
   return (
     <div className="mt-5">
       <hr />
-      <div className="footer flex">
-        <div className="row w-1/4 mr-[10px] mt-5">
-          <div className="flex">
-            <img className="w-[114px] h-[31px] p-1" src="https://pubcdn2.ivymoda.com/images/logo-footer.png" alt="" />
-            <img className="w-[114px] h-[31px] p-1" src="https://images.dmca.com/Badges/dmca_protected_16_120.png?ID=0cfdeac4-6e7f-4fca-941f-57a0a0962777" alt="" />
-            <img className="w-[114px] h-[31px] p-1" src="https://pubcdn2.ivymoda.com/images/img-congthuong.png" alt="" />
+      <div className="footer row">
+        <div className="col-3">
+          <div className=" flex">
+            <img className="w-[115px] h-[31px]" src="https://pubcdn2.ivymoda.com/images/logo-footer.png" alt="" />
+            <img className="w-[75px] h-[24px]" src="https://images.dmca.com/Badges/dmca_protected_16_120.png?ID=0cfdeac4-6e7f-4fca-941f-57a0a0962777" alt="" />
+            <img className="w-[87px] h-[32px]" src="https://pubcdn2.ivymoda.com/images/img-congthuong.png" alt="" />
           </div>
-          <div className='pt-5 text-[#57585A] text-[20px]'><p>Công ty Cổ phần Dự Kim với số đăng ký kinh doanh: 0105777650</p></div>
-          <div className='pt-5 text-[#57585A] text-[20px]'><b>Địa chỉ đăng ký:</b> Tổ dân phố Tháp, P.Đại Mỗ, Q.Nam Từ Liêm, TP.Hà Nội, Việt Nam</div>
-          <div className='pt-5 text-[#57585A] text-[20px]'><b>Số điện thoại:</b> 0243 205 2222</div>
+          <p>Công ty Cổ phần Dự Kim với số đăng ký kinh doanh: 0105777650</p>
+         <p> <b>Địa chỉ đăng ký:</b> Tổ dân phố Tháp, P.Đại Mỗ, Q.Nam Từ Liêm, TP.Hà Nội, Việt Nam</p>
+         <p> <b>Số điện thoại:</b> 0243 205 2222 </p>
+         <div className="flex">
+          <img className='w-[39px] h-[30px] p-1' src="https://pubcdn2.ivymoda.com/images/ic_fb.svg" alt="" />
+          <img className='w-[39px] h-[30px] p-1' src="https://pubcdn2.ivymoda.com/images/ic_gg.svg" alt="" />
+          <img className='w-[39px] h-[30px] p-1' src="https://pubcdn2.ivymoda.com/images/ic_instagram.svg" alt="" />
+          <img className='w-[39px] h-[30px] p-1' src="https://pubcdn2.ivymoda.com/images/ic_pinterest.svg" alt="" />
+          <img className='w-[39px] h-[30px] p-1' src="https://pubcdn2.ivymoda.com/images/ic_ytb.svg" alt="" />
+         
+         </div>
         </div>
 
 
-        <div className="row w-1/4 ml-10 mt-5">
+        <div className="col">
         <h1 className="text-xl"><b>Giới thiệu</b></h1>
-          <ul className=''>
-            <li className='pt-5 text-[#57585A] text-[20px]'>Về IVY moda</li>
-            <li className='pt-5 text-[#57585A] text-[20px]'>Tuyển dụng </li>
-            <li className='pt-5 text-[#57585A] text-[20px]'>Hệ thống cửa hàng</li>
-          </ul>
+        
+            <p className=''>Về IVY moda</p>
+            <p className=''>Tuyển dụng </p>
+            <p className=''>Hệ thống cửa hàng</p>
+        
         </div>
-        <div className="row w-1/4 mt-5">
+        <div className="col">
           <h1 className="text-xl"><b>Dịch vụ khách hàng</b></h1>
-          <ul className='text-ellipsis'>
-            <li className='pt-5 text-[#57585A] text-[20px]'>Về IVY moda</li>
-            <li className='pt-5 text-[#57585A] text-[20px]'>Tuyển dụng </li>
-            <li className='pt-5 text-[#57585A] text-[20px]'>Hệ thống cửa hàng</li>
-          </ul>
+          
+            <p className=''>Về IVY moda</p>
+            <p className=''>Tuyển dụng </p>
+            <p className=''>Hệ thống cửa hàng</p>
+          
         </div>
-        <div className="row w-1/4 mt-5">
+        <div className="col">
           <h1 className="text-xl"><b>Liên hệ</b></h1>
-          <ul className='text-ellipsis'>
-            <li className='pt-5 text-[#57585A] text-[20px]'>Hotline</li>
-            <li className='pt-5 text-[#57585A] text-[20px]'>Email </li>
-            <li className='pt-5 text-[#57585A] text-[20px]'>Live Chat</li>
-            <li className='pt-5 text-[#57585A] text-[20px]'>Messenger</li>
-            <li className='pt-5 text-[#57585A] text-[20px]'>Liên hệ</li>
-          </ul>
+          
+            <p className=''>Hotline</p>
+            <p className=''>Email </p>
+            <p className=''>Live Chat</p>
+            <p className=''>Messenger</p>
+            <p className=''>Liên hệ</p>
+         
         </div>
-        <div className="row w-1/4 mt-5">
+        <div className="col">
           <div className="w-96 rounded-br-[20%] rounded-tl-[20%] border-[10px] h-60 p-6">
             <p><b className="text-xl">Nhận thông tin các chương trình của IVY moda</b></p>
             <form id="frm_subscribe" className='flex'>
@@ -57,10 +65,12 @@ const Footer = (props: Props) => {
 
           </div>
           <h1 className="text-xl pt-5"><b>Download App</b></h1>
-          <img  className="text-xl pt-5" src="https://pubcdn2.ivymoda.com/images/appstore.png" alt="" />
-          <img className="text-xl pt-5" src="https://pubcdn2.ivymoda.com/images/googleplay.png" alt="" />
+          <img  className="text-xl pt-1" src="https://pubcdn2.ivymoda.com/images/appstore.png" alt="" />
+          <img className="text-xl pt-1" src="https://pubcdn2.ivymoda.com/images/googleplay.png" alt="" />
         </div>
       </div>
+      <hr />
+      <p className='text-center'>©IVYmoda All rights reserved</p>
     </div>
   )
 }
