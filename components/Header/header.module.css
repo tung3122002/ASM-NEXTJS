@@ -1,0 +1,61 @@
+
+
+
+
+.mega nav {
+    display: none;
+    position: absolute;
+    width: 1300px;
+    background:#FFFFFF;
+    border: 1px solid #eaeaea;
+    padding: 10px;
+    
+}
+.mega:hover nav {
+    display: block;
+
+
+}
+.megamenu li {
+    
+    color: azure;
+    color: rgb(0, 0, 0);
+   
+    padding: 5px;
+}
+.mega li {
+    
+    color: azure;
+    color: rgb(0, 0, 0);
+   
+    padding: 5px;
+}
+.hovermenu li {
+    
+    color: azure;
+    color: rgb(0, 0, 0);
+   
+    padding: 5px;
+}
+
+.hovermenu li:hover {
+    
+    color: rgb(99, 80, 130);
+    padding: 5px;
+    
+
+}
+
+.hovermenu:hover nav {
+    display: block;
+
+
+}
+.hovermenu nav {
+    display: none;
+    position: absolute;
+    width: fit-content;
+    background:#FFFFFF;
+    border: 1px solid #eaeaea;
+    padding: 10px;
+}
