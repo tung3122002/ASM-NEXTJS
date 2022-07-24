@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import styles from '../styles/Home.module.css'
+
 import { Carousel } from 'react-bootstrap'
 import Banner from '../components/Banner'
 const Home: NextPage = () => {
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
       <Banner/>
       <Footer/>
     </div>
+
   )
 }
 
