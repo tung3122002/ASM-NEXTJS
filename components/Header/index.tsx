@@ -13,7 +13,7 @@ const Header = (props: Props) => {
 
 
 
-                        <li className={style.mega}><a className="p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">NỮ</a>
+                        <li className={style.mega}><a className="p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="#">NỮ</a>
                             <nav className={style.megamenu}>
                                 <div className="row ">
                                     <li className="col"><a className="dropdown-item" href="#"><b>Hàng nữ mới về</b></a>
