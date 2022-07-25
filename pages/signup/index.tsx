@@ -126,9 +126,11 @@ const Signup = (props: Props) => {
                             Bằng cách cung cấp cho IVY moda thông tin chi tiết của bạn, quá trình mua hàng trên ivymoda.com sẽ là một trải nghiệm thú vị và nhanh chóng hơn!
                         </p>
 
-                        <button type="submit" className={style.loginbtns}  >
-                            ĐĂNG KÝ
-                        </button>
+                        <a href="/signin">
+                            <button type="submit" className={style.loginbtns}  >
+                                ĐĂNG KÝ
+                            </button>
+                        </a>
                     </div>
 
                 </div>
@@ -136,7 +138,7 @@ const Signup = (props: Props) => {
 
 
 
-           
+
             <div>
                 <Footer />
             </div>
