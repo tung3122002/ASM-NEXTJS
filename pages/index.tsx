@@ -7,6 +7,7 @@ import styles from '../styles/Home.module.css'
 
 import { Carousel } from 'react-bootstrap'
 import Banner from '../components/Banner'
+import Product from './products'
 const Home: NextPage = () => {
   return (
     <div className='container '>
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
       
       <Header/>
       <Banner/>
+      <Product/>
       <Footer/>
     </div>
 

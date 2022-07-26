@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import Footer from '../../components/Footer'
-import Header from '../../components/Header'
+
 import style from './signup.module.css'
 
 type Props = {}
@@ -126,7 +126,7 @@ const Signup = (props: Props) => {
                             Bằng cách cung cấp cho IVY moda thông tin chi tiết của bạn, quá trình mua hàng trên ivymoda.com sẽ là một trải nghiệm thú vị và nhanh chóng hơn!
                         </p>
 
-                        <a href="/signin">
+                        <a href="signin">
                             <button type="submit" className={style.loginbtns}  >
                                 ĐĂNG KÝ
                             </button>
