@@ -55,7 +55,7 @@ const Header = (props: Props) => {
 
                             </nav>
                         </li>
-                        <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">NAM</a></li>
+                        <li><Link className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="category">NAM</Link></li>
                         <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">TRẺ EM</a></li>
                         <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">BỘ SƯ TẬP</a></li>
                         <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">LIFESTYLE</a></li>
