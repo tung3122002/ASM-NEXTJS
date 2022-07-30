@@ -4,14 +4,16 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Carousel from 'react-bootstrap/Carousel';
 import Link from 'next/link';
+import Layout from '../../components/Layout'
 type Props = {}
 
 const Product = (props: Props) => {
+
     return (
         <div className="no-underline">
             <p className=" mt-3 text-center tracking-{2px} uppercase font-semibold text-3xl font-['Montserrat']">NEW ARRIVAL</p>
             <Tabs
-                defaultActiveKey="profile"
+                defaultActiveKey="home"
                 id="uncontrolled-tab-example"
                 className="mb-3 justify-content-center border-none"
             >
