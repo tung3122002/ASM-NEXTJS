@@ -4,13 +4,17 @@ import Table from 'react-bootstrap/Table';
 import { GetStaticProps, GetStaticPropsContext } from 'next'
 import Link from 'next/link';
 import LayoutAdmin from '../../../components/Layout/admin';
+import useSWR from "swr";
 
-type ProductsProps = {
-  products: any[]
-}
-const Products = ({products}: ProductsProps) => {
-  console.log('Product component', products)
-  if(!products) return null;
+import useProducts from '../../../hooks/use-product';
+
+const Products = () => {
+  
+  const { data, error, create , mutate,removea} = useProducts();
+
+
+    if(!data) return <div>Loading...</div>
+    if(error) return <div>Failed to load</div>
   return (
     <div>
            <Link href="/admin/product/add">
@@ -33,16 +37,18 @@ const Products = ({products}: ProductsProps) => {
       </tr>
     </thead>
     <tbody>
-     
-        {products.map(item => (
+   
+        {data.map((item) => (
       
-         <tr key={item.id}>
+         <tr key={item._id}>
           <td>1</td>
           <td>{item.name}</td>
           <td>{item.price}</td>
           <td>@mdo</td>
           <td>Otto</td>
-          <td  key={item.id}><Link href={`product/${item.id}`}>{item.name}</Link></td>
+          <td  key={item.id}><Link href={`product/${item._id}`}>Sửa</Link></td>
+          <button onClick={() => mutate(removea(item._id))} className="btn btn-danger">Remove</button>
+         
           </tr>
       
     ))}
@@ -53,17 +59,7 @@ const Products = ({products}: ProductsProps) => {
   )
   
 }
-export const getStaticProps: GetStaticProps<ProductsProps> = async (context: GetStaticPropsContext) => {
-  console.log('getStaticProps');
-  const response = await fetch(`http://localhost:8000/api/products`);
-  const data = await response.json();
 
-  return {
-    props: {
-      products: data.map(item => ({id: item._id, name: item.name}))
-    }
-  }
-}
 Products.Layout = LayoutAdmin;
 
 export default Products

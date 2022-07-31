@@ -1,22 +1,18 @@
+import instance from "./instance";
 
-import { ProductNew } from "../models/product";
-import axiosClient from "./config";
-
-export const getAll = (): Promise<ProductNew> => {
-  return axiosClient.get("/products");
+export const list = () => {
+  const url = `/products`;
+  return instance.get(url);
 };
-
-export const remove = (id: string): Promise<ProductNew> => {
-  return axiosClient.delete(`/products/${id}`);
+export const add = (product) => {
+  const url = `/products`;
+  return instance.post(url, product);
 };
-
-export const add = (news: ProductNew): Promise<ProductNew> => {
-  return axiosClient.post("/products", news);
+export const read = (id: number) => {
+  const url = `/products/${id}`;
+  return instance.get(url);
 };
-
-export const get = (id: string): Promise<ProductNew> => {
-  return axiosClient.get(`/products/${id}`);
-};
-export const update = (news: ProductNew): Promise<ProductNew> => {
-  return axiosClient.put(`/products/${news._id}`, news);
+export const remove = (id: number|string) => {
+  const url = `/products/${id}`;
+  return instance.delete(url);
 };

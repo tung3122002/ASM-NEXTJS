@@ -1,4 +1,6 @@
-export type ProductNew = {
-    _id?: string;
-    name: string;
-  };
+export type Product={
+  _id?:number|string,
+  name: string,
+  price: number,
+  img: string,
+}
