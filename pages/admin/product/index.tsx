@@ -8,9 +8,10 @@ import useSWR from "swr";
 
 import useProducts from '../../../hooks/use-product';
 
+
 const Products = () => {
   
-  const { data, error, create , mutate,removea} = useProducts();
+  const { data, error, create , mutate,onhandleRemove} = useProducts();
 
 
     if(!data) return <div>Loading...</div>
@@ -47,7 +48,7 @@ const Products = () => {
           <td>@mdo</td>
           <td>Otto</td>
           <td  key={item.id}><Link href={`product/${item._id}`}>Sửa</Link></td>
-          <button onClick={() => mutate(removea(item._id))} className="btn btn-danger">Remove</button>
+          <button onClick={() => mutate(onhandleRemove(item._id))} className="btn btn-danger">Remove</button>
          
           </tr>
       
@@ -55,7 +56,9 @@ const Products = () => {
        
        </tbody>
      </Table>
+     
      </div>
+     
   )
   
 }

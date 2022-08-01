@@ -1,5 +1,7 @@
+
+import { toast } from "react-toastify";
 import useSWR, { useSWRConfig } from "swr";
-import { add, list, remove } from "../api-client/product";
+import { add, list, remove, update } from "../api-client/product";
 
 
 const useProducts = () => {
@@ -20,19 +22,31 @@ const useProducts = () => {
         return [...data, product];
     };
     // update
-
+    const onhandleUpdate= async (product ) =>{
+        console.log(product)
+        const { data } = await update(product)
+        return(data.map(item => item._id == data._id ? data : item));
+      }
     // delete
-    const removea = async (_id:number) => {
-        const { data: product } = await remove(_id);
-        return [...data, product];
-    };
+    const onhandleRemove = async (id :number|string) =>{
+     
+      if  (confirm("Bạn Muốn Xóa Ko?") ==  true) {
+        alert("Xóa thành công")
+        await remove(id);  
+        return (data.filter(item=>item._id !==id));
+       
+    } else {
+        return false;
+    }
+        
+      };
     return {
         create,
-        // update,
+        onhandleUpdate,
         // delete,
         data,
         error,
-        removea,
+        onhandleRemove,
         mutate
     };
 };

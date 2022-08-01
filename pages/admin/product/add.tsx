@@ -50,6 +50,14 @@ const AddProduct = (props: Props) => {
     <label htmlFor="price" className="form-label">Giá Sản Phẩm</label>
     <input type="number" className="form-control"  {...register('price')}  />
   </div>
+  <div className="col-span-6 sm:col-span-3">
+                <label htmlFor="country" className="block text-sm font-medium text-gray-700">Danh mục</label>
+                <select id="country" name="country" autoComplete="country-name" className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  <option>United States</option>
+                  <option>Canada</option>
+                  <option>Mexico</option>
+                </select>
+              </div>
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">IMG</label>
     <input type="text" className="form-control"  {...register('img')}  />
