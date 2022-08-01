@@ -23,9 +23,10 @@ const useProducts = () => {
     };
     // update
     const onhandleUpdate= async (product ) =>{
-        console.log(product)
-        const { data } = await update(product)
-        return(data.map(item => item._id == data._id ? data : item));
+        
+       const { data } = await update(product)
+       console.log({ data })
+        // return(data.map(item => item._id == data._id ? data : item));
       }
     // delete
     const onhandleRemove = async (id :number|string) =>{
