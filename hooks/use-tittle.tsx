@@ -1,43 +1,43 @@
 import { toast } from "react-toastify";
 import useSWR, { useSWRConfig } from "swr";
-import { add, list, remove, update } from "../api-client/product";
+import { addtittle, listtittle, removetittle, update } from "../api-client/tittle";
 const useTittle = () => {
     // swr - api
- 
+
     const fetcher = async (url: string) => {
-        const { data } = await list(url);
+        const { data } = await listtittle(url);
         return data;
     };
 
-    const { data, error, mutate } = useSWR("/products", fetcher, {
+    const { data, error, mutate } = useSWR("/tittle", fetcher, {
         dedupingInterval: 5000,
     });
 
     // create
     const createtittle = async (item) => {
-        const { data: tittle } = await add(item);
+        const { data: tittle } = await addtittle(item);
         return [...data, tittle];
     };
     // update
-    const updatetittle= async (tittle ) =>{
-        
-       const { data } = await update(tittle)
-       console.log({ data })
+    const updatetittle = async (tittle) => {
+
+        const { data } = await update(tittle)
+        console.log({ data })
         // return(data.map(item => item._id == data._id ? data : item));
-      }
-    // delete
-    const removetittle = async (id :number|string) =>{
-     
-      if  (confirm("Bạn Muốn Xóa Ko?") ==  true) {
-        alert("Xóa thành công")
-        await remove(id);  
-        return (data.filter(item=>item._id !==id));
-       
-    } else {
-        return false;
     }
-        
-      };
+    // delete
+    const removetittle = async (id: number | string) => {
+
+        if (confirm("Bạn Muốn Xóa Ko?") == true) {
+            alert("Xóa thành công")
+            await removetittle(id);
+            return (data.filter(item => item._id !== id));
+
+        } else {
+            return false;
+        }
+
+    };
     return {
         createtittle,
         updatetittle,

@@ -1,23 +1,24 @@
 
+import { Tittle } from "../models/tittle"; 
 import instance from "./instance";
-import { Tittle } from "../models/tittle";
-export const list = () => {
+
+export const listtittle = () => {
     const url = `/tittle`;
-    return instance.get(url);
-  };
-  export const add = (tittle) => {
+    return instance.get(url)
+}
+export const addtittle = (tittle: Tittle) => {
     const url = `/tittle`;
-    return instance.post(url, tittle);
-  };
-  export const read = (id: number) => {
-    const url = `/tittle/${id}`;
-    return instance.get(url);
-  };
-  export const remove = (id: number|string) => {
-    const url = `/tittle/${id}`;
-    return instance.delete(url);
-  };
-  export const update = (tittle: Tittle) => {
-    const url = `/tittle/${tittle._id}`;
-    return instance.put(url, tittle);
-  };
+    return instance.post(url, tittle)
+}
+export const removetittle = (_id: number) => {
+    const url = `/tittle/${_id}`
+    return instance.delete(url)
+}
+export const readtittle = (slug: string | undefined) => {
+    const url = `/tittle/${slug}`
+    return instance.get(url)
+}
+export const updatetittle = (tittle: Tittle) => {
+    const url = `/tittle/${tittle._id}`
+    return instance.put(url, tittle)
+}
