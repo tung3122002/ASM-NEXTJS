@@ -5,10 +5,15 @@ import Tabs from 'react-bootstrap/Tabs';
 import Carousel from 'react-bootstrap/Carousel';
 import Link from 'next/link';
 import Layout from '../../components/Layout'
+import useProducts from '../../hooks/use-product';
 type Props = {}
 
 const Product = (props: Props) => {
+    const { data, error, create, mutate, onhandleRemove } = useProducts();
 
+
+    if (!data) return <div>Loading...</div>
+    if (error) return <div>Failed to load</div>
     return (
         <div className="no-underline">
             <p className=" mt-3 text-center tracking-{2px} uppercase font-semibold text-3xl font-['Montserrat']">NEW ARRIVAL</p>
@@ -23,76 +28,27 @@ const Product = (props: Props) => {
                         <Carousel.Item>
 
                             <div className="row">
-                                
-                                <Link href='/products/${id}'>
-                                <div className="col-3 box relative  ">
-                                    <div className="overflow-hidden">
-                                        <span className="absolute right-5 top-1 text-[16px] font-semibold text-white	 bg-[#E7973E] w-12 h-12  leading-[48px] text-center rounded-full">
-                                            20%
-                                        </span>
-                                        <div className="box-img overflow-hidden  w-full h-full">
-                                            <img className='transition ease-in-out   hover:scale-110 duration-300' src="https://pubcdn.ivymoda.com/files/product/thumab/400/2022/07/22/a21021e72c4d5b6d3a968a32ce21a991.JPG" alt="" />
-                                        </div>
-                                        <div className="box-text">
-                                            ĐẦM THÔ DÁNG BALLOONqqqqq
-                                        </div>
-                                        <div className="box-price">
-                                            <p>1.751.200đ</p>
-                                        </div>
-                                    </div>
+                                {data.map((items) => (
+                                    <Link key={items._id} href='/products/${id}'>
+                                        <div className="col-3 box relative  ">
+                                            <div className="overflow-hidden">
+                                                <span className="absolute right-5 top-1 text-[16px] font-semibold text-white	 bg-[#E7973E] w-12 h-12  leading-[48px] text-center rounded-full">
+                                                    20%
+                                                </span>
+                                                <div className="box-img overflow-hidden  w-full h-full">
+                                                    <img className='transition ease-in-out   hover:scale-110 duration-300' src={items.img} alt="" />
+                                                </div>
+                                                <div className="box-text">
+                                                   {items.name}
+                                                </div>
+                                                <div className="box-price">
+                                                    <p>1.751.200đ</p>
+                                                </div>
+                                            </div>
 
-                                </div></Link>
-                                <div className="col-3 box relative  ">
-                                    <div className="overflow-hidden">
-                                        <span className="absolute right-5 top-1 text-[16px] font-semibold text-white	 bg-[#E7973E] w-12 h-12  leading-[48px] text-center rounded-full">
-                                            20%
-                                        </span>
-                                        <div className="box-img overflow-hidden  w-full h-full">
-                                            <img className='transition ease-in-out   hover:scale-110 duration-300' src="https://pubcdn.ivymoda.com/files/product/thumab/400/2022/07/22/a21021e72c4d5b6d3a968a32ce21a991.JPG" alt="" />
-                                        </div>
-                                        <div className="box-text">
-                                            ĐẦM THÔ DÁNG BALLOON
-                                        </div>
-                                        <div className="box-price">
-                                            <p>1.751.200đ</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div className="col-3 box relative  ">
-                                    <div className="overflow-hidden">
-                                        <span className="absolute right-5 top-1 text-[16px] font-semibold text-white	 bg-[#E7973E] w-12 h-12  leading-[48px] text-center rounded-full">
-                                            20%
-                                        </span>
-                                        <div className="box-img overflow-hidden  w-full h-full">
-                                            <img className='transition ease-in-out   hover:scale-110 duration-300' src="https://pubcdn.ivymoda.com/files/product/thumab/400/2022/07/22/a21021e72c4d5b6d3a968a32ce21a991.JPG" alt="" />
-                                        </div>
-                                        <div className="box-text">
-                                            ĐẦM THÔ DÁNG BALLOON
-                                        </div>
-                                        <div className="box-price">
-                                            <p>1.751.200đ</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div className="col-3 box relative  ">
-                                    <div className="overflow-hidden">
-                                        <span className="absolute right-5 top-1 text-[16px] font-semibold text-white	 bg-[#E7973E] w-12 h-12  leading-[48px] text-center rounded-full">
-                                            20%
-                                        </span>
-                                        <div className="box-img overflow-hidden  w-full h-full">
-                                            <img className='transition ease-in-out   hover:scale-110 duration-300' src="https://pubcdn.ivymoda.com/files/product/thumab/400/2022/07/22/a21021e72c4d5b6d3a968a32ce21a991.JPG" alt="" />
-                                        </div>
-                                        <div className="box-text">
-                                            ĐẦM THÔ DÁNG BALLOON
-                                        </div>
-                                        <div className="box-price">
-                                            <p>1.751.200đ</p>
-                                        </div>
-                                    </div>
-
-                                </div>
+                                        </div></Link>
+                                ))}
+                              
                             </div>
                         </Carousel.Item>
                         <Carousel.Item>
@@ -695,11 +651,11 @@ const Product = (props: Props) => {
             </div>
 
             <div className='row mt-3'>
-<div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
-<div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
-<div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
-<div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
-<div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
+                <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
+                <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
+                <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
+                <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
+                <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
 
 
             </div>
