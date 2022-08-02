@@ -77,7 +77,7 @@ const Header = (props: Props) => {
                         <input className="seach border mr-10 right-4 w-[240px] h-[40px] px-[30px] rounded-md" type="text" name='' id='' placeholder="TÌM KIẾM SẢN PHẨM" />
                     </form>
                     <div className="mr-14">
-                        <Link href='signin'><i className="fa-solid fa-cart-shopping pr-3" /></Link>
+                        <Link href='cart'><i className="fa-solid fa-cart-shopping pr-3" /></Link>
                         <Link href='signup'><i className="fa-solid fa-user pr-3" /></Link>
                         
                         <i className="fa-solid fa-headphones pr-3" />
