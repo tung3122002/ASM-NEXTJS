@@ -1,10 +1,11 @@
 import React from 'react'
-import LayoutColos from '../../../components/Layout/colos'
-import useTittle from '../../../hooks/use-tittle'
+
+import useTittle from '../../hooks/use-tittle'
 import Link from 'next/link';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Carousel from 'react-bootstrap/Carousel';
+import LayoutColos from '../../components/Layout/colos';
 
 const Title = () => {
   const { data, error, createtittle, mutate, removetittle } = useTittle();
