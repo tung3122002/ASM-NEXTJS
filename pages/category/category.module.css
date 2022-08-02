@@ -1,0 +1,33 @@
+.mid{
+    display:  grid;
+    grid-template-columns: 400px 1fr;
+    column-gap: 25px;
+}
+.input{
+    padding: 10px;
+}
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+.click_detail{
+    margin: auto;
+    border: solid 1px black;
+    width: 150px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+.click_detail:hover{
+    background-color: rgba(242, 11, 11, 0.948);
+    color: white;
+    
+}
+.price{
+    font-weight: bold;
+}
+.a{
+    text-decoration: none;
+    color: white;
+}

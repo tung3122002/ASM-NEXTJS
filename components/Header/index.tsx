@@ -55,7 +55,7 @@ const Header = (props: Props) => {
 
                             </nav>
                         </li>
-                        <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">NAM</a></li>
+                        <li><Link className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="category">NAM</Link></li>
                         <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">TRẺ EM</a></li>
                         <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">BỘ SƯ TẬP</a></li>
                         <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">LIFESTYLE</a></li>
@@ -77,8 +77,9 @@ const Header = (props: Props) => {
                         <input className="seach border mr-10 right-4 w-[240px] h-[40px] px-[30px] rounded-md" type="text" name='' id='' placeholder="TÌM KIẾM SẢN PHẨM" />
                     </form>
                     <div className="mr-14">
-                        <i className="fa-solid fa-cart-shopping pr-3" />
-                        <i className="fa-solid fa-user pr-3" />
+                        <Link href='cart'><i className="fa-solid fa-cart-shopping pr-3" /></Link>
+                        <Link href='signup'><i className="fa-solid fa-user pr-3" /></Link>
+                        
                         <i className="fa-solid fa-headphones pr-3" />
                         
                     </div>

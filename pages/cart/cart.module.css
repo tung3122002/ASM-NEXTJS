@@ -1,0 +1,13 @@
+
+.content{
+display: grid;
+grid-template-columns: 2fr 1fr;
+column-gap: 15px;
+}
+.table{
+    margin-left: 30px;
+    border: solid 1px black;
+}
+.th{
+    padding: 15px ;
+}
