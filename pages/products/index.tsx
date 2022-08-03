@@ -6,7 +6,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Link from 'next/link';
 import Layout from '../../components/Layout'
 import useProducts from '../../hooks/use-product';
-import Title from '../components/tit';
+import Title from '../tit';
 type Props = {}
 
 const Product = (props: Props) => {
