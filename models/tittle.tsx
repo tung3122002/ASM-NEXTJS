@@ -1,5 +1,6 @@
 export type Tittle = {
-    _id?: string,
+    _id: any;
+    id: string,
     name: string,
-   img: string,
+    img: string,
 }

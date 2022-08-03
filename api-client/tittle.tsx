@@ -14,8 +14,8 @@ export const deletetittle = (_id: number) => {
     const url = `/gallerys/${_id}`
     return instance.delete(url)
 }
-export const readtittle = (slug: string | undefined) => {
-    const url = `/gallerys/${slug}`
+export const readtittle = (id: number)=> {
+    const url = `/gallerys/${id}`
     return instance.get(url)
 }
 export const updatetittle = (tittle: Tittle) => {
