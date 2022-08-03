@@ -62,7 +62,8 @@ const AddProduct = (props: Props) => {
           Danh Sách Sản phẩm
         </button>
       </Link>
-      <div> <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+         <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
           <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} />

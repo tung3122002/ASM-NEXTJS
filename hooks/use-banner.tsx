@@ -13,7 +13,7 @@ const useBanner = () => {
         return data;
     };
 
-    const { data, error, mutate } = useSWR("/products", fetcher, {
+    const { data, error, mutate } = useSWR("/banners", fetcher, {
         dedupingInterval: 5000,
     });
 
