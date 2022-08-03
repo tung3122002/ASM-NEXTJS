@@ -48,15 +48,7 @@ const Title = () => {
       </Tabs>
       
 
-      {/* <div className='row mt-3'>
-        <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
-        <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
-        <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
-        <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
-        <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
-
-
-    </div> */}
+   
       
     </div>
   )
