@@ -11,7 +11,7 @@ const useStory = () => {
         return data;
     };
 
-    const { data, error, mutate } = useSWR("/gallerys", fetcher, {
+    const { data, error, mutate } = useSWR("/story", fetcher, {
         dedupingInterval: 5000,
     });
 
