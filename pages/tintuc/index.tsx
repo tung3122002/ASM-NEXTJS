@@ -1,4 +1,5 @@
 import React from 'react'
+import Title from '../tit'
 import style from './tintuc.module.css'
 type Props = {}
 
@@ -48,6 +49,9 @@ const Tintuc = (props: Props) => {
                         
                     </div>
                 </div>
+            </div>
+            <div>
+            <Title />
             </div>
         </div>
     )
