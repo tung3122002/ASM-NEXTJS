@@ -40,13 +40,13 @@ const AddProduct = (props: Props) => {
       dataInput.img = res.data.url
       console.log(dataInput.img)
       router.push("/admin/tittle");
-      mutate(createtittle(dataInput))
+      mutate(create(dataInput))
 
     })
 
   }
 
-  const { data, error, createtittle, mutate } = useTittle();
+  const { data, error, create, mutate } = useTittle();
 
 
   if (!data) return <div>Loading...</div>

@@ -1,10 +1,11 @@
-
 import { toast } from "react-toastify";
 import useSWR, { useSWRConfig } from "swr";
 
+import { addtittle, deletetittle, listtittle, updatetittle } from "../api-client/tittle";
+
 const useTittle = () => {
     // swr - api
- 
+
     const fetcher = async (url: string) => {
         const { data } = await listtittle(url);
         return data;
@@ -20,13 +21,26 @@ const useTittle = () => {
         return [...data, product];
     };
     // update
-    const onhandleUpdate= async (product ) =>{
-        
-       const { data } = await update(product)
-       console.log({ data })
+    const onhandleUpdate = async (product) => {
+
+        const { data } = await updatetittle(product)
+        console.log({ data })
         // return(data.map(item => item._id == data._id ? data : item));
-      }
+    }
     // delete
+    // delete
+    const onhandleRemove = async (id: number | string) => {
+
+        if (confirm("Bạn Muốn Xóa Ko?") == true) {
+            alert("Xóa thành công")
+            await deletetittle(id);
+            return (data.filter(item => item._id !== id));
+
+        } else {
+            return false;
+        }
+
+    };
 
     return {
         create,
