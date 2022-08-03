@@ -6,6 +6,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Link from 'next/link';
 import Layout from '../../components/Layout'
 import useProducts from '../../hooks/use-product';
+import Title from '../tit';
 type Props = {}
 
 const Product = (props: Props) => {
@@ -650,7 +651,7 @@ const Product = (props: Props) => {
                 <p className='inset-x-0 bottom-0 absolute border mx-auto rounded-tl-[20px]  rounded-br-[20px] bg-slate-900  hover:bg-slate-50 text-center w-52  px-[13px] py-[24px] no-underline '><a className='text-gray-900 text-slate-50 hover:text-gray-900 no-underline ' href=''> XEM NGAY BST</a></p>
             </div>
 
-            <div className='row mt-3'>
+            {/* <div className='row mt-3'>
                 <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
                 <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
                 <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
@@ -658,7 +659,8 @@ const Product = (props: Props) => {
                 <div className="col "><img className='' src="https://pubcdn.ivymoda.com/files/news/2022/04/15/ea4e270adf8060e384a2fd2cea9d30e6.jpg" alt="" /></div>
 
 
-            </div>
+            </div> */}
+            <Title/>
         </div>
     )
 }

@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import React from 'react'
+import Banner from '../../components/Banner'
 import Footer from '../../components/Footer'
+
+import Product from '../products'
 
 import style from './signup.module.css'
 
@@ -63,9 +66,8 @@ const Signup = (props: Props) => {
 
                 </div>
             </div>
-
-
-
+          
+         
 
             
         </div>

@@ -16,9 +16,9 @@ type Props = {
 }
 type Frominputs = {
   name: string,
- 
+
   img: string,
-  
+
 }
 
 const AddBanner = (props: Props) => {
@@ -64,8 +64,8 @@ const AddBanner = (props: Props) => {
         </button>
       </Link>
       <div> <form onSubmit={handleSubmit(onSubmit)}>
-       
-      <div className="mb-3">
+
+        <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
           <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} />
           {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
