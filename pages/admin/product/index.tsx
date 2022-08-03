@@ -41,9 +41,11 @@ const Products = () => {
               <td>1</td>
               <td>{item.name}</td>
               <td>{item.price}</td>
-              <td><img className="w-20" src={item.img} alt="" /></td>
-              <td>Otto</td>
-              <td key={item.id}><Link href={`product/${item._id}`}>Sửa</Link></td>
+              <td><img className="w-20" src={item.img} alt="" /></td>s
+              <td key={item.id}>
+                <Link href={`product/${item._id}`}>Sửa</Link>
+              
+              </td>
               <button onClick={() => mutate(onhandleRemove(item._id))} className="inline-flex items-center px-2 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Remove</button>
 
             </tr>

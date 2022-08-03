@@ -10,7 +10,7 @@ export const addtittle = (tittle: Tittle) => {
     const url = `/gallerys`;
     return instance.post(url, tittle)
 }
-export const removetittle = (_id: number) => {
+export const deletetittle = (_id: number) => {
     const url = `/gallerys/${_id}`
     return instance.delete(url)
 }

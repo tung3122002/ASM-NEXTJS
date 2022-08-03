@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import useSWR, { useSWRConfig } from "swr";
-import { addtittle, listtittle, removetittle, update } from "../api-client/tittle";
+import { addtittle, listtittle, deletetittle, update } from "../api-client/tittle";
 const useTittle = () => {
     // swr - api
 
@@ -30,7 +30,7 @@ const useTittle = () => {
 
         if (confirm("Bạn Muốn Xóa Ko?") == true) {
             alert("Xóa thành công")
-            await removetittle(id);
+            await deletetittle(id);
             return (data.filter(item => item._id !== id));
 
         } else {
