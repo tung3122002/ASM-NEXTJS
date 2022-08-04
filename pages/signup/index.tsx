@@ -28,7 +28,7 @@ const Signin = (props: Props) => {
         // router.push("/signin");
         mutate(dangnhap(data))
         localStorage.setItem("user", JSON.stringify(data))
-        toast.success("Bạn đã đăng nhập thành công, chờ 3s");
+        console.log("đăng nhập thành công")
     }
     const {  dangnhap, mutate } = useUser();
 
@@ -68,7 +68,7 @@ const Signin = (props: Props) => {
                                 ĐĂNG NHẬP
                             </button>
                         </form>
-                        <ToastContainer />
+
                     </div>
 
                     <div className="col text-center">
@@ -90,7 +90,7 @@ const Signin = (props: Props) => {
             </div>
           
          
-            
+
             
         </div>
 

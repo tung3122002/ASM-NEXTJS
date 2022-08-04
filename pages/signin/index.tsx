@@ -21,7 +21,6 @@ type Frominputs = {
     phoneNumber: number,
     date: string,
     password: string,
-    password2: string,
     description: string,
 }
 
@@ -34,7 +33,7 @@ const Signup = (props: Props) => {
         router.push("/signup");
         mutate(dangky(data))
     }
-    const {  dangky, mutate } = useUser();
+    const { dangky, mutate } = useUser();
     return (
         <div className='container '>
             <Head>
@@ -56,7 +55,7 @@ const Signup = (props: Props) => {
                             <div className='col'>
                                 <div className="mb-3" >
                                     <label htmlFor="exampleInputEmail1" className="form-label">Họ:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('lastName')}  aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="text" className="form-control" id="exampleInputEmail1" {...register('lastName')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Email:*</label>
@@ -64,7 +63,7 @@ const Signup = (props: Props) => {
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Ngày sinh:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('date')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="text" className="form-control" id="exampleInputEmail1" {...register('date')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
 
                                 </div>
 
@@ -72,11 +71,11 @@ const Signup = (props: Props) => {
                             <div className='col'>
                                 <div className="mb-3" >
                                     <label htmlFor="exampleInputEmail1" className="form-label">Tên:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('name')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Điện thoại:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('phoneNumber')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="number" className="form-control" id="exampleInputEmail1" {...register('phoneNumber')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="disabledSelect" className="form-label">Giới tính:*</label>
@@ -98,15 +97,15 @@ const Signup = (props: Props) => {
                                 <div className=''>
                                     <div className="mb-3" >
                                         <label htmlFor="exampleInputEmail1" className="form-label">Mật khẩu:*</label>
-                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
+                                        <input type="password" className="form-control" id="exampleInputEmail1" {...register('password')} aria-describedby="emailHelp" style={{ padding: '10px' }} />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputEmail1" className="form-label">Nhập lại mật khẩu:*</label>
-                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
+                                        <input type="password" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputEmail1" className="form-label">Mời nhập các ký tự trong hình vào ô sau:*</label>
-                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
+                                        <input type="text" className="form-control" id="exampleInputEmail1"  aria-describedby="emailHelp" style={{ padding: '10px' }} />
                                     </div>
                                     <div style={{ border: '1px solid #000', width: '100px', marginTop: '20px' }}>
                                         <img src="https://ivymoda.com/ajax/captcha" alt="" />
@@ -124,29 +123,18 @@ const Signup = (props: Props) => {
                                                 Đăng ký nhận bản tin
                                             </label>
                                         </div>
-                        </form>
-</div>
-
-
+                                    </div>
                                 </div>
-
-                                <button type="submit" className={style.loginbtns}  >
-                                    ĐĂNG KÝ
-                                </button>
                             </div>
+                            <button type="submit" className={style.loginbtns}  >
+                                ĐĂNG KÝ
+                            </button>
                         </form>
 
                     </div>
-
-
                 </div>
-            </div>
-
-
-
-
-
-        </div>
+            </div >
+        </div >
     )
 }
 
