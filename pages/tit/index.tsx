@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from 'react'
 
 import useTittle from '../../hooks/use-tittle'
@@ -21,12 +22,12 @@ const Title = () => {
       >
         <Tab eventKey="home" className='' title={undefined}>
 
-          <Carousel>
-            <Carousel.Item>
+         
+            
 
               <div className="row">
                 {data.map((items) => (
-                  <Link key={items._id} href='/products/${id}'>
+                  
                     <div className="col-2 box relative  ">
                       <div className="overflow-hidden">
                        
@@ -36,13 +37,13 @@ const Title = () => {
                         
                       </div>
 
-                    </div></Link>
+                    </div>
                 ))}
 
               </div>
-            </Carousel.Item>
+          
             
-          </Carousel>
+          
         </Tab>
        
       </Tabs>

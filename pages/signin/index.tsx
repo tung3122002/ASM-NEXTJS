@@ -18,7 +18,7 @@ const Signin = (props: Props) => {
                 <br />
                 <div className="row pt-4  : mt-10 : border-t-2">
                     <h1 className='text-center : text-2xl'> ĐĂNG KÝ</h1>
-             
+                    <div className="col : ">
                         <div className=' :'>
                             <h4>Thông tin khách hàng</h4>
                             <br />
@@ -76,37 +76,6 @@ const Signin = (props: Props) => {
                                 <label htmlFor="exampleFormControlTextarea1" className="form-label">Địa chỉ:*</label>
                                 <textarea className="form-control" id="exampleFormControlTextarea1"></textarea>
                             </div>
-<<<<<<< HEAD
-                        </form>
-
-                  
-                    <div className="col ">
-                        <h4>Thông tin mật khẩu</h4>
-                        <br />
-                        <form style={{ marginTop: '10px' }}>
-                            <div className=''>
-                                <div className="mb-3" >
-                                    <label htmlFor="exampleInputEmail1" className="form-label">Mật khẩu:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
-                                </div>
-                                <div className="mb-3">
-                                    <label htmlFor="exampleInputEmail1" className="form-label">Nhập lại mật khẩu:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
-                                </div>
-                                <div className="mb-3">
-                                    <label htmlFor="exampleInputEmail1" className="form-label">Mời nhập các ký tự trong hình vào ô sau:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
-                                </div>
-                                <div style={{ border: '1px solid #000', width: '100px', marginTop: '20px' }}>
-                                    <img src="https://ivymoda.com/ajax/captcha" alt="" />
-                                </div>
-                                <div style={{ marginTop: '10px' }}>
-                                    <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
-                                        <label className="form-check-label" htmlFor="flexCheckIndeterminate">
-                                        Đồng ý với các điều khoản của IVY
-                                        </label>
-=======
                             <div className="col ">
                                 <h4>Thông tin mật khẩu</h4>
                                 <br />
@@ -115,7 +84,6 @@ const Signin = (props: Props) => {
                                     <div className="mb-3" >
                                         <label htmlFor="exampleInputEmail1" className="form-label">Mật khẩu:*</label>
                                         <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
->>>>>>> c8450717057d5cd581e08d4968c7a9b3e7b1b5a8
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputEmail1" className="form-label">Nhập lại mật khẩu:*</label>
