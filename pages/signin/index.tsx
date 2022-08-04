@@ -65,6 +65,7 @@ const Signup = (props: Props) => {
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Ngày sinh:*</label>
                                     <input type="email" className="form-control" id="exampleInputEmail1" {...register('date')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
+
                                 </div>
 
                             </div>
@@ -90,51 +91,53 @@ const Signup = (props: Props) => {
                                 <label htmlFor="exampleFormControlTextarea1" className="form-label">Địa chỉ:*</label>
                                 <textarea className="form-control" id="exampleFormControlTextarea1" {...register('description')} ></textarea>
                             </div>
+                            <div className="col ">
+                                <h4>Thông tin mật khẩu</h4>
+                                <br />
+
+                                <div className=''>
+                                    <div className="mb-3" >
+                                        <label htmlFor="exampleInputEmail1" className="form-label">Mật khẩu:*</label>
+                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="exampleInputEmail1" className="form-label">Nhập lại mật khẩu:*</label>
+                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="exampleInputEmail1" className="form-label">Mời nhập các ký tự trong hình vào ô sau:*</label>
+                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
+                                    </div>
+                                    <div style={{ border: '1px solid #000', width: '100px', marginTop: '20px' }}>
+                                        <img src="https://ivymoda.com/ajax/captcha" alt="" />
+                                    </div>
+                                    <div style={{ marginTop: '10px' }}>
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
+                                            <label className="form-check-label" htmlFor="flexCheckIndeterminate">
+                                                Đồng ý với các điều khoản của IVY
+                                            </label>
+                                        </div>
+                                        <div className="form-check" >
+                                            <input className="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
+                                            <label className="form-check-label" htmlFor="flexCheckIndeterminate">
+                                                Đăng ký nhận bản tin
+                                            </label>
+                                        </div>
                         </form>
-
-                    </div>
-                    <div className="col ">
-                        <h4>Thông tin mật khẩu</h4>
-                        <br />
-                        <form style={{ marginTop: '10px' }}>
-                            <div className=''>
-                                <div className="mb-3" >
-                                    <label htmlFor="exampleInputEmail1" className="form-label">Mật khẩu:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('password')} aria-describedby="emailHelp" style={{ padding: '10px' }} />
-                                </div>
-                                <div className="mb-3">
-                                    <label htmlFor="exampleInputEmail1" className="form-label">Nhập lại mật khẩu:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('password2')}  aria-describedby="emailHelp" style={{ padding: '10px' }} />
-                                </div>
-                                <div className="mb-3">
-                                    <label htmlFor="exampleInputEmail1" className="form-label">Mời nhập các ký tự trong hình vào ô sau:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
-                                </div>
-                                <div style={{ border: '1px solid #000', width: '100px', marginTop: '20px' }}>
-                                    <img src="https://ivymoda.com/ajax/captcha" alt="" />
-                                </div>
-                                <div style={{ marginTop: '10px' }}>
-                                    <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
-                                        <label className="form-check-label" htmlFor="flexCheckIndeterminate">
-                                            Đồng ý với các điều khoản của IVY
-                                        </label>
-                                    </div>
-                                    <div className="form-check" >
-                                        <input className="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
-                                        <label className="form-check-label" htmlFor="flexCheckIndeterminate">
-                                            Đăng ký nhận bản tin
-                                        </label>
-                                    </div>
-                                </div>
+</div>
 
 
+                                </div>
+
+                                <button type="submit" className={style.loginbtns}  >
+                                    ĐĂNG KÝ
+                                </button>
                             </div>
                         </form>
-                        <button type="submit" className={style.loginbtns}  >
-                            ĐĂNG KÝ
-                        </button>
+
                     </div>
+
 
                 </div>
             </div>

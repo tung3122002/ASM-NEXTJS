@@ -1,29 +1,29 @@
 import { toast } from "react-toastify";
 import useSWR, { useSWRConfig } from "swr";
 
-import { addtittle, deletetittle, listtittle, updatetittle } from "../api-client/tittle";
+import { addstory, deletestory, liststory, updatestory } from "../api-client/story";
 
-const useTittle = () => {
+const useStory = () => {
     // swr - api
 
     const fetcher = async (url: string) => {
-        const { data } = await listtittle(url);
+        const { data } = await liststory(url);
         return data;
     };
 
-    const { data, error, mutate } = useSWR("/gallerys", fetcher, {
+    const { data, error, mutate } = useSWR("/story", fetcher, {
         dedupingInterval: 5000,
     });
 
     // create
     const create = async (item) => {
-        const { data: product } = await addtittle(item);
+        const { data: product } = await addstory(item);
         return [...data, product];
     };
     // update
     const onhandleUpdate = async (product) => {
 
-        const { data } = await updatetittle(product)
+        const { data } = await updatestory(product)
         console.log({ data })
         // return(data.map(item => item._id == data._id ? data : item));
     }
@@ -33,7 +33,7 @@ const useTittle = () => {
 
         if (confirm("Bạn Muốn Xóa Ko?") == true) {
             alert("Xóa thành công")
-            await deletetittle(id);
+            await deletestory(id);
             return (data.filter(item => item._id !== id));
 
         } else {
@@ -53,4 +53,4 @@ const useTittle = () => {
     };
 };
 
-export default useTittle;
+export default useStory;
