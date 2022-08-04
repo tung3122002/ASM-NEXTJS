@@ -25,10 +25,10 @@ const Signin = (props: Props) => {
     const router = useRouter();
     const onSubmit: SubmitHandler<Frominputs> = data => {
         console.log(data);
-        router.push("/signin");
+        // router.push("/signin");
         mutate(dangnhap(data))
         localStorage.setItem("user", JSON.stringify(data))
-        console.log("đăng nhập thành công")
+        toast.success("Bạn đã đăng nhập thành công, chờ 3s");
     }
     const {  dangnhap, mutate } = useUser();
 
@@ -68,7 +68,7 @@ const Signin = (props: Props) => {
                                 ĐĂNG NHẬP
                             </button>
                         </form>
-
+                        <ToastContainer />
                     </div>
 
                     <div className="col text-center">
@@ -90,7 +90,7 @@ const Signin = (props: Props) => {
             </div>
           
          
-
+            
             
         </div>
 
