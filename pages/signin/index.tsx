@@ -18,7 +18,7 @@ const Signin = (props: Props) => {
                 <br />
                 <div className="row pt-4  : mt-10 : border-t-2">
                     <h1 className='text-center : text-2xl'> ĐĂNG KÝ</h1>
-                    <div className="col : ">
+             
                         <div className=' :'>
                             <h4>Thông tin khách hàng</h4>
                             <br />
@@ -78,7 +78,7 @@ const Signin = (props: Props) => {
                             </div>
                         </form>
 
-                    </div>
+                  
                     <div className="col ">
                         <h4>Thông tin mật khẩu</h4>
                         <br />
