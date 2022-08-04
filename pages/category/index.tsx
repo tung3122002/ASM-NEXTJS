@@ -9,7 +9,7 @@ type Props = {}
 const category = (props: Props) => {
     return (
         <div>
-            <Header />
+          
             <div className={style.mid}>
                 <aside className="p-5">
                     <Accordion>
@@ -147,8 +147,7 @@ const category = (props: Props) => {
                         </div>
                     </div>
                     </article>
-                    {/*  */}
-                    {/*  */}
+                 
                     <article className='mb-5'>
                     <div className="products">
                         <div className="">
@@ -189,8 +188,7 @@ const category = (props: Props) => {
                         </div>
                     </div>
                     </article>
-                    {/*  */}
-                    {/*  */}
+                   
                     <article className='mb-5'>
                     <div className="products">
                         <div className="">
@@ -203,12 +201,12 @@ const category = (props: Props) => {
                         </div>
                     </div>
                     </article>
-                    {/*  */}
+                  
                     </div>
                 </section>
             </div>
 
-            <Footer />
+          
         </div>
     )
 }
