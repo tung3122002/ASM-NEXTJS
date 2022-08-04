@@ -19,7 +19,7 @@ const Title = () => {
         id="uncontrolled-tab-example"
         className="mb-3 justify-content-center border-none"
       >
-        <Tab eventKey="home" className=''>
+        <Tab eventKey="home" className='' title={undefined}>
 
           <Carousel>
             <Carousel.Item>

@@ -3,14 +3,14 @@ import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import { list, read } from '../../../api-client/product';
+import { listtittle, readtittle } from '../../../api-client/tittle';
 import LayoutAdmin from '../../../components/Layout/admin';
-import useProducts from '../../../hooks/use-product';
-import { Product } from '../../../models/product';
+import useTittle from '../../../hooks/use-tittle';
+import { Tittle  } from '../../../models/tittle';
 
 type ProductProps = {
   product: any;
-  onUpdate: (product: Product) => void
+  onUpdate: (product: Tittle) => void
 }
 
 
@@ -26,7 +26,7 @@ const ProductDetail = (props: ProductProps) => {
 
   useEffect(() => {
     const getProduct = async () => {
-      const { data } = await read(props.product._id);
+      const { data } = await readtittle(props.product._id);
       reset(data)
 
     }
@@ -36,11 +36,11 @@ const ProductDetail = (props: ProductProps) => {
   
   const onSubmit: SubmitHandler<FormInputs> = data => {
     // console.log(data);
-    router.push("/admin/product");
+    router.push("/admin/tittle");
     mutate(onhandleUpdate(data))
   }
 
-  const { data, error, create, mutate, onhandleUpdate } = useProducts();
+  const { data, error, create, mutate, onhandleUpdate } = useTittle();
 
 
   if (!data) return <div>Loading...</div>
@@ -49,16 +49,12 @@ const ProductDetail = (props: ProductProps) => {
   return (
 
     <>
-      <div>{props.product.name}
+      <div>{props.product.names}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
             <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} />
             {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
-          </div>
-          <div className="mb-3">
-            <label htmlFor="price" className="form-label">Giá Sản Phẩm</label>
-            <input type="number" className="form-control"  {...register('price')} />
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label">IMG</label>
@@ -75,7 +71,7 @@ const ProductDetail = (props: ProductProps) => {
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   console.log('context', context);
   context.res.setHeader("Cache-Control", "s-maxage=10, stale-while-revalidate")
-  const product = await (await fetch(`http://localhost:8000/api/products/${context.params?.id}`)).json();
+  const product = await (await fetch(`http://localhost:8000/api/gallerys/${context.params?.id}`)).json();
   return {
     props: { product }
   }
