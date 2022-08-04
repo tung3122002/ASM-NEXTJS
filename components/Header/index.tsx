@@ -61,7 +61,7 @@ const Header = (props: Props) => {
                         <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">LIFESTYLE</a></li>
                         <li className={style.hovermenu}><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">VỀ CHÚNG TÔI</a>
                             <nav className={style.dropdown}>
-                                <li><a className="dropdown-item" href="#">Action</a></li>
+                                <li><a className="dropdown-item" href="about">Action</a></li>
                                 <li><a className="dropdown-item" href="#">Another action</a></li>
                                 <li><a className="dropdown-item" href="#">Something else here</a></li>
                             </nav></li>
@@ -77,7 +77,7 @@ const Header = (props: Props) => {
                         <input className="seach border mr-10 right-4 w-[240px] h-[40px] px-[30px] rounded-md" type="text" name='' id='' placeholder="TÌM KIẾM SẢN PHẨM" />
                     </form>
                     <div className="mr-14">
-                        <Link href='signin'><i className="fa-solid fa-cart-shopping pr-3" /></Link>
+                        <Link href='cart'><i className="fa-solid fa-cart-shopping pr-3" /></Link>
                         <Link href='signup'><i className="fa-solid fa-user pr-3" /></Link>
                         
                         <i className="fa-solid fa-headphones pr-3" />
