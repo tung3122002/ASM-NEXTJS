@@ -6,8 +6,9 @@ import Link from 'next/link';
 import LayoutAdmin from '../../../components/Layout/admin';
 import useSWR from "swr";
 import useProducts from '../../../hooks/use-product';
-const Products = () => {
-  const { data, error, create, mutate, onhandleRemove } = useProducts();
+import useTittle from '../../../hooks/use-tittle';
+const Gallerys = () => {
+  const { data, error, mutate, onhandleRemove } = useTittle();
 
 
   if (!data) return <div>Loading...</div>
@@ -59,6 +60,6 @@ const Products = () => {
 
 }
 
-Products.Layout = LayoutAdmin;
+Gallerys.Layout = LayoutAdmin;
 
-export default Products
+export default Gallerys

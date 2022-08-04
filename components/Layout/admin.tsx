@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react'
 import Dropdown from 'react-bootstrap/Dropdown';
 import { LayoutProps } from '../../models/layout'
-import AdminLayout from '../AdminLayout'
+// import AdminLayout from '../AdminLayout'
 
 
 const LayoutAdmin = ({ children }: LayoutProps) => {
@@ -32,6 +32,30 @@ const LayoutAdmin = ({ children }: LayoutProps) => {
                 icon
               </div>
               <span>Products</span>
+            </span>
+          </Link>
+          <Link href="/admin/category">
+            <span className="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200">
+              <div className="shrink-0 w-5 h-5 mr-2 text-gray-300 transition group-hover:text-gray-300">
+                icon
+              </div>
+              <span>Category</span>
+            </span>
+          </Link>
+          <Link href="/admin/tittle">
+            <span className="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200">
+              <div className="shrink-0 w-5 h-5 mr-2 text-gray-300 transition group-hover:text-gray-300">
+                icon
+              </div>
+              <span>Tittle</span>
+            </span>
+          </Link>
+          <Link href="/admin/banner">
+            <span className="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200">
+              <div className="shrink-0 w-5 h-5 mr-2 text-gray-300 transition group-hover:text-gray-300">
+                icon
+              </div>
+              <span>Banner</span>
             </span>
           </Link>
 

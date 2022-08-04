@@ -1,10 +1,14 @@
+import { GetServerSideProps, GetServerSidePropsContext, GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head'
 import React from 'react'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 type Props = {}
-
-const ProductDetail = (props: Props) => {
+type ProductProps = {
+    product: any;
+  }
+const ProductDetail = ({product}: ProductProps) => {
+    if(!product) return null;
     return (
 
         <div className="container">
@@ -18,7 +22,7 @@ const ProductDetail = (props: Props) => {
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><a href="#">Home</a></li>
                         <li className="breadcrumb-item"><a href="#">Library</a></li>
-                        <li className="breadcrumb-item active" aria-current="page">Data</li>
+                        <li className="breadcrumb-item active" aria-current="page">{product.name}</li>
                     </ol>
                 </nav>
             </div>
@@ -26,27 +30,20 @@ const ProductDetail = (props: Props) => {
             <div className="flex">
                 <div className="">
                     <div className="img w-[534px] border">
-                        <img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/07/22/f057aaf179c95ed11511327de763ef76.JPG" alt="" />
+                        <img className="w-full"  src={product.img} alt="" />
 
                     </div>
 
 
                 </div>
-                <div className="img-con ml-2 ">
-                    <img className='w-24 h-36 mt-3' src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/07/22/f057aaf179c95ed11511327de763ef76.JPG" alt="" />
-                    <img className='w-24 h-36 mt-3' src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/07/22/f057aaf179c95ed11511327de763ef76.JPG" alt="" />
-                    <img className='w-24 h-36 mt-3' src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/07/22/f057aaf179c95ed11511327de763ef76.JPG" alt="" />
-                    <img className='w-24 h-36 mt-3' src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/07/22/f057aaf179c95ed11511327de763ef76.JPG" alt="" />
-                    <img className='w-24 h-36 mt-3' src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/07/22/f057aaf179c95ed11511327de763ef76.JPG" alt="" />
-
-                </div>
+              
                 <div className="ml-9">
                     <div className="box-text uppercase font-semibold	text-3xl	">
-                        <p>SET ÁO VÀ CHÂN VÁY HỌA TIẾT KẺ</p>
+                    <p>{product.name}</p>
 
                     </div>
                     <div className="msp flex text-[16px] text-[#6c6d70]">
-                        <div>SKU: 16M7728</div>
+                        <div>SKU: {product._id}</div>
                         <div className="star ml-40">
                             <i className="fa-solid fa-star text-amber-300 p-1"></i>
                             <i className="fa-solid fa-star text-amber-300 p-1"></i>
@@ -58,7 +55,7 @@ const ProductDetail = (props: Props) => {
                     </div>
 
                     <div className="price">
-                        <b className="font-semibold	 text-2xl">1.751.200đ</b><del className=' ml-2 text-base text-[#a8a9ad]'>2.189.000đ</del><sup>60%</sup>
+                        <b className="font-semibold	 text-2xl">{product.price}Đ</b><del className=' ml-2 text-base text-[#a8a9ad]'>2.189.000đ</del><sup>60%</sup>
                     </div>
                     <div className="color pt-3">
                         <b className='font-semibold text-xl'>Màu sắc: Kẻ Nude</b>
@@ -232,4 +229,12 @@ const ProductDetail = (props: Props) => {
     )
 }
 
+export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
+    console.log('context', context);
+    context.res.setHeader("Cache-Control", "s-maxage=10, stale-while-revalidate")
+    const product = await (await fetch(`http://localhost:8000/api/products/${context.params?.id}`)).json();
+    return {
+      props: { product }
+    }
+  }
 export default ProductDetail

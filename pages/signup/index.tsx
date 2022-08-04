@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import React from 'react'
+import Banner from '../../components/Banner'
 import Footer from '../../components/Footer'
+
+import Product from '../products'
 
 import style from './signup.module.css'
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -85,9 +88,8 @@ const Signin = (props: Props) => {
 
                 </div>
             </div>
-
-
-
+          
+         
 
             
         </div>
