@@ -19,7 +19,7 @@ const Products = () => {
     if(error) return <div>Failed to load</div>
   return (
     <div>
-           <Link href="/admin/product/add">
+           <Link href="/admin/category/add">
           <button
             type="button"
             className="inline-flex items-center px-2 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -32,9 +32,7 @@ const Products = () => {
       <tr>
         <th>#</th>
         <th>Tên Sản Phẩm</th>
-        <th>Price</th>
-        <th>Color</th>
-        <th>Quantity</th>
+     
         <th>Action</th>
       </tr>
     </thead>
@@ -45,9 +43,7 @@ const Products = () => {
          <tr key={item._id}>
           <td>1</td>
           <td>{item.name}</td>
-          <td>{item.price}</td>
-          <td><img  className="w-20" src={item.img} alt="" /></td>
-          <td>Otto</td>
+        
           <td  key={item.id}><Link href={`product/${item._id}`}>Sửa</Link></td>
           <button onClick={() => mutate(onhandleRemove(item._id))} className="btn btn-danger">Remove</button>
          

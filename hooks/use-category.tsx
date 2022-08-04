@@ -13,7 +13,7 @@ const useCategory = () => {
         return data;
     };
 
-    const { data, error, mutate } = useSWR("/products", fetcher, {
+    const { data, error, mutate } = useSWR("/category", fetcher, {
         dedupingInterval: 5000,
     });
 

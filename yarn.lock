@@ -269,6 +269,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-slick@^0.23.10":
+  "integrity" "sha512-ZiqdencANDZy6sWOWJ54LDvebuXFEhDlHtXU9FFipQR2BcYU2QJxZhvJPW6YK7cocibUiNn+YvDTbt1HtCIBVA=="
+  "resolved" "https://registry.npmjs.org/@types/react-slick/-/react-slick-0.23.10.tgz"
+  "version" "0.23.10"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-transition-group@^4.4.4":
   "integrity" "sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA=="
   "resolved" "https://registry.npmjs.org/@types/react-transition-group/-/react-transition-group-4.4.5.tgz"
@@ -1656,6 +1663,11 @@
     "merge-stream" "^2.0.0"
     "supports-color" "^8.0.0"
 
+"jquery@>=1.8.0":
+  "integrity" "sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw=="
+  "resolved" "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz"
+  "version" "3.6.0"
+
 "js-tokens@^3.0.0 || ^4.0.0":
   "integrity" "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="
   "resolved" "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
@@ -2437,6 +2449,11 @@
   "integrity" "sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q=="
   "resolved" "https://registry.npmjs.org/slash/-/slash-3.0.0.tgz"
   "version" "3.0.0"
+
+"slick-carousel@^1.8.1":
+  "integrity" "sha512-XB9Ftrf2EEKfzoQXt3Nitrt/IPbT+f1fgqBdoxO3W/+JYvtEOW6EgxnWfr9GH6nmULv7Y2tPmEX3koxThVmebA=="
+  "resolved" "https://registry.npmjs.org/slick-carousel/-/slick-carousel-1.8.1.tgz"
+  "version" "1.8.1"
 
 "source-map-js@^1.0.1", "source-map-js@^1.0.2", "source-map-js@>=0.6.2 <2.0.0":
   "integrity" "sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw=="
