@@ -3,16 +3,45 @@ import React from 'react'
 import Footer from '../../components/Footer'
 import style from './signin.module.css'
 
-type Props = {}
 
-const Signin = (props: Props) => {
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { User } from '../../models/user';
+import { useRouter } from "next/router";
+import useUser from '../../hooks/use-user';
+
+type Props = {
+    onAdd: (user: User) => void
+}
+
+
+type Frominputs = {
+    name: string,
+    lastName: string,
+    email: string,
+    phoneNumber: number,
+    date: string,
+    password: string,
+    password2: string,
+    description: string,
+}
+
+
+const Signup = (props: Props) => {
+    const { register, handleSubmit, formState: { errors } } = useForm<Frominputs>();
+    const router = useRouter();
+    const onSubmit: SubmitHandler<Frominputs> = data => {
+        console.log(data);
+        router.push("/signup");
+        mutate(dangky(data))
+    }
+    const {  dangky, mutate } = useUser();
     return (
         <div className='container '>
-     <Head>
-        <title>LOGO</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossOrigin="anonymous" referrerPolicy='no-referrer' />
-      </Head>
+            <Head>
+                <title>LOGO</title>
+                <link rel="icon" href="/favicon.ico" />
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossOrigin="anonymous" referrerPolicy='no-referrer' />
+            </Head>
             <div className=' relative mt-10 ' >
 
                 <br />
@@ -23,38 +52,30 @@ const Signin = (props: Props) => {
                             <h4>Thông tin khách hàng</h4>
                             <br />
                         </div>
-                        <form className='row pt-2'>
+                        <form onSubmit={handleSubmit(onSubmit)} className='row pt-2'>
                             <div className='col'>
                                 <div className="mb-3" >
                                     <label htmlFor="exampleInputEmail1" className="form-label">Họ:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('lastName')}  aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Email:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('email')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Ngày sinh:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
-                                </div>
-                               
-                                <div className="mb-3">
-                                    <label htmlFor="disabledSelect" className="form-label">Tỉnh/TP:*</label>
-                                    <select id="disabledSelect" className="form-select" style={{ padding: '11px' }}>
-                                        <option>Hà Nội</option>
-
-                                    </select>
+                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('date')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
 
                             </div>
                             <div className='col'>
                                 <div className="mb-3" >
                                     <label htmlFor="exampleInputEmail1" className="form-label">Tên:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('name')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Điện thoại:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('phoneNumber')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="disabledSelect" className="form-label">Giới tính:*</label>
@@ -63,18 +84,11 @@ const Signin = (props: Props) => {
                                         <option>Nữ</option>
                                     </select>
                                 </div>
-                                <div className="mb-3">
-                                    <label htmlFor="disabledSelect" className="form-label">Quận/Huyện:*</label>
-                                    <select id="disabledSelect" className="form-select" style={{ padding: '11px' }}>
-                                        <option>Quận/Huyện</option>
-
-                                    </select>
-                                </div>
 
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleFormControlTextarea1" className="form-label">Địa chỉ:*</label>
-                                <textarea className="form-control" id="exampleFormControlTextarea1"></textarea>
+                                <textarea className="form-control" id="exampleFormControlTextarea1" {...register('description')} ></textarea>
                             </div>
                         </form>
 
@@ -86,11 +100,11 @@ const Signin = (props: Props) => {
                             <div className=''>
                                 <div className="mb-3" >
                                     <label htmlFor="exampleInputEmail1" className="form-label">Mật khẩu:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
+                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('password')} aria-describedby="emailHelp" style={{ padding: '10px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Nhập lại mật khẩu:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
+                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('password2')}  aria-describedby="emailHelp" style={{ padding: '10px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Mời nhập các ký tự trong hình vào ô sau:*</label>
@@ -103,13 +117,13 @@ const Signin = (props: Props) => {
                                     <div className="form-check">
                                         <input className="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
                                         <label className="form-check-label" htmlFor="flexCheckIndeterminate">
-                                        Đồng ý với các điều khoản của IVY
+                                            Đồng ý với các điều khoản của IVY
                                         </label>
                                     </div>
                                     <div className="form-check" >
                                         <input className="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
                                         <label className="form-check-label" htmlFor="flexCheckIndeterminate">
-                                        Đăng ký nhận bản tin
+                                            Đăng ký nhận bản tin
                                         </label>
                                     </div>
                                 </div>
@@ -128,9 +142,9 @@ const Signin = (props: Props) => {
 
 
 
-           
+
         </div>
     )
 }
 
-export default Signin
+export default Signup
