@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import useSWR, { useSWRConfig } from "swr";
-import { signin,signup,list } from "../api-client/user";
+import { signin, signup, list, update, remove } from "../api-client/user";
 import { User } from "../models/user"
 
 const useUser = () => {
@@ -23,10 +23,29 @@ const useUser = () => {
         const { data: product } = await signup(user);
         return [...data, product];
     };
+    const onhandleUpdate = async (user) => {
 
+        const { data } = await update(user)
+        console.log({ data })
+        // return(data.map(item => item._id == data._id ? data : item));
+    }
+    // delete
+    const onhandleRemove = async (id: number | string) => {
+
+        if (confirm("Bạn Muốn Xóa Ko?") == true) {
+            alert("Xóa thành công")
+            await remove(id);
+            return (data.filter(item => item._id !== id));
+
+        } else {
+            return false;
+        }
+    }
     return {
         dangky,
         dangnhap,
+        onhandleRemove,
+        onhandleUpdate,
         data,
         error,
         mutate
