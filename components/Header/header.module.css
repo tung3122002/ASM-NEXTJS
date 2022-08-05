@@ -27,11 +27,11 @@
     
     color: azure;
     color: rgb(0, 0, 0);
-   
+    list-style: none;
     padding: 5px;
 }
 .hovermenu li {
-    
+    list-style: none;
     color: azure;
     color: rgb(0, 0, 0);
    
