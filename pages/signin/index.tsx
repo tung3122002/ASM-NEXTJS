@@ -3,6 +3,8 @@ import React from 'react'
 import Footer from '../../components/Footer'
 import style from './signin.module.css'
 
+type Props = {}
+
 
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { User } from '../../models/user';
@@ -34,6 +36,7 @@ const Signup = (props: Props) => {
         mutate(dangky(data))
     }
     const { dangky, mutate } = useUser();
+
     return (
         <div className='container '>
             <Head>
@@ -51,31 +54,44 @@ const Signup = (props: Props) => {
                             <h4>Thông tin khách hàng</h4>
                             <br />
                         </div>
-                        <form onSubmit={handleSubmit(onSubmit)} className='row pt-2'>
+                        <form className='row pt-2'>
                             <div className='col'>
                                 <div className="mb-3" >
                                     <label htmlFor="exampleInputEmail1" className="form-label">Họ:*</label>
-                                    <input type="text" className="form-control" id="exampleInputEmail1" {...register('lastName')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
+
+                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
+
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Email:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('email')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Ngày sinh:*</label>
-                                    <input type="text" className="form-control" id="exampleInputEmail1" {...register('date')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
 
+                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                </div>
+
+
+                                <div className="mb-3">
+                                    <label htmlFor="disabledSelect" className="form-label">Tỉnh/TP:*</label>
+                                    <select id="disabledSelect" className="form-select" style={{ padding: '11px' }}>
+                                        <option>Hà Nội</option>
+
+                                    </select>
                                 </div>
 
                             </div>
                             <div className='col'>
                                 <div className="mb-3" >
                                     <label htmlFor="exampleInputEmail1" className="form-label">Tên:*</label>
-                                    <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
+
+                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Điện thoại:*</label>
-                                    <input type="number" className="form-control" id="exampleInputEmail1" {...register('phoneNumber')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
+
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="disabledSelect" className="form-label">Giới tính:*</label>
@@ -84,11 +100,18 @@ const Signup = (props: Props) => {
                                         <option>Nữ</option>
                                     </select>
                                 </div>
+                                <div className="mb-3">
+                                    <label htmlFor="disabledSelect" className="form-label">Quận/Huyện:*</label>
+                                    <select id="disabledSelect" className="form-select" style={{ padding: '11px' }}>
+                                        <option>Quận/Huyện</option>
+
+                                    </select>
+                                </div>
 
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleFormControlTextarea1" className="form-label">Địa chỉ:*</label>
-                                <textarea className="form-control" id="exampleFormControlTextarea1" {...register('description')} ></textarea>
+                                <textarea className="form-control" id="exampleFormControlTextarea1"></textarea>
                             </div>
                             <div className="col ">
                                 <h4>Thông tin mật khẩu</h4>
@@ -124,7 +147,15 @@ const Signup = (props: Props) => {
                                             </label>
                                         </div>
                                     </div>
+
+
+
                                 </div>
+
+                                <button type="submit" className={style.loginbtns}  >
+                                    ĐĂNG KÝ.
+                                </button>
+
                             </div>
                             <button type="submit" className={style.loginbtns}  >
                                 ĐĂNG KÝ
@@ -138,4 +169,4 @@ const Signup = (props: Props) => {
     )
 }
 
-export default Signup
+export default Signin

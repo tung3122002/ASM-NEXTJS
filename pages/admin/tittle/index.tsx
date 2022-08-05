@@ -26,11 +26,11 @@ const Tittle = () => {
         <thead>
           <tr>
             <th>#</th>
-            <th>Tên Sản Phẩm</th>
-            <th>Price</th>
-            <th>Color</th>
-            <th>Quantity</th>
-            <th>Action</th>
+            <th>Tên</th>
+            <th>Ảnh</th>
+            <th>Chức Năng</th>
+            <th>Chức Năng</th>
+           
           </tr>
         </thead>
         <tbody>
