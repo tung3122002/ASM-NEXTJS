@@ -3,9 +3,38 @@ import React from 'react'
 import Footer from '../../components/Footer'
 import style from './signin.module.css'
 
-type Props = {}
 
-const Signin = (props: Props) => {
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { User } from '../../models/user';
+import { useRouter } from "next/router";
+import useUser from '../../hooks/use-user';
+
+type Props = {
+    onAdd: (user: User) => void
+}
+
+
+type Frominputs = {
+    name: string,
+    lastName: string,
+    email: string,
+    phoneNumber: number,
+    date: string,
+    password: string,
+    password2: string,
+    description: string,
+}
+
+
+const Signup = (props: Props) => {
+    const { register, handleSubmit, formState: { errors } } = useForm<Frominputs>();
+    const router = useRouter();
+    const onSubmit: SubmitHandler<Frominputs> = data => {
+        console.log(data);
+        router.push("/signup");
+        mutate(dangky(data))
+    }
+    const {  dangky, mutate } = useUser();
     return (
         <div className='container '>
             <Head>
@@ -23,38 +52,31 @@ const Signin = (props: Props) => {
                             <h4>Thông tin khách hàng</h4>
                             <br />
                         </div>
-                        <form className='row pt-2'>
+                        <form onSubmit={handleSubmit(onSubmit)} className='row pt-2'>
                             <div className='col'>
                                 <div className="mb-3" >
                                     <label htmlFor="exampleInputEmail1" className="form-label">Họ:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('lastName')}  aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Email:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('email')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Ngày sinh:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
-                                </div>
+                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('date')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
 
-                                <div className="mb-3">
-                                    <label htmlFor="disabledSelect" className="form-label">Tỉnh/TP:*</label>
-                                    <select id="disabledSelect" className="form-select" style={{ padding: '11px' }}>
-                                        <option>Hà Nội</option>
-
-                                    </select>
                                 </div>
 
                             </div>
                             <div className='col'>
                                 <div className="mb-3" >
                                     <label htmlFor="exampleInputEmail1" className="form-label">Tên:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('name')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Điện thoại:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
+                                    <input type="email" className="form-control" id="exampleInputEmail1" {...register('phoneNumber')} aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="disabledSelect" className="form-label">Giới tính:*</label>
@@ -63,18 +85,11 @@ const Signin = (props: Props) => {
                                         <option>Nữ</option>
                                     </select>
                                 </div>
-                                <div className="mb-3">
-                                    <label htmlFor="disabledSelect" className="form-label">Quận/Huyện:*</label>
-                                    <select id="disabledSelect" className="form-select" style={{ padding: '11px' }}>
-                                        <option>Quận/Huyện</option>
-
-                                    </select>
-                                </div>
 
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleFormControlTextarea1" className="form-label">Địa chỉ:*</label>
-                                <textarea className="form-control" id="exampleFormControlTextarea1"></textarea>
+                                <textarea className="form-control" id="exampleFormControlTextarea1" {...register('description')} ></textarea>
                             </div>
                             <div className="col ">
                                 <h4>Thông tin mật khẩu</h4>
@@ -109,7 +124,8 @@ const Signin = (props: Props) => {
                                                 Đăng ký nhận bản tin
                                             </label>
                                         </div>
-                                    </div>
+                        </form>
+</div>
 
 
                                 </div>
@@ -134,4 +150,4 @@ const Signin = (props: Props) => {
     )
 }
 
-export default Signin
+export default Signup
