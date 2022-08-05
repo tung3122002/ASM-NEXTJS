@@ -13,7 +13,7 @@ const Header = (props: Props) => {
 
 
 
-                        <li className={style.mega}><a className="p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="#">NỮ</a>
+                        <li className={style.mega}><a className="p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="/">NỮ</a>
                             <nav className={style.megamenu}>
                                 <div className="row ">
                                     <li className="col"><a className="dropdown-item" href="#"><b>Hàng nữ mới về</b></a>
@@ -55,10 +55,10 @@ const Header = (props: Props) => {
 
                             </nav>
                         </li>
-                        <li><Link className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="category">NAM</Link></li>
+                        <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="category">NAM</a></li>
                         <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">TRẺ EM</a></li>
                         <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">BỘ SƯ TẬP</a></li>
-                        <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">LIFESTYLE</a></li>
+                        <li><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="/tintuc">LIFESTYLE</a></li>
                         <li className={style.hovermenu}><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href="">VỀ CHÚNG TÔI</a>
                             <nav className={style.dropdown}>
                                 <li><a className="dropdown-item" href="about">Action</a></li>
@@ -70,7 +70,8 @@ const Header = (props: Props) => {
 
                 </div>
                 <div className=' items-center mx-auto w-[144px]'>
-                    <img src="https://pubcdn2.ivymoda.com/images/logo.png" alt="" />
+                    <a href="/"><img src="https://pubcdn2.ivymoda.com/images/logo.png" alt="" /></a>
+                    
                 </div>
                 <div className="user mx-auto flex leading-10">
                     <form action='' className='relative '>
@@ -87,6 +88,7 @@ const Header = (props: Props) => {
                                 <li><Link href='signin'>Đăng Ký</Link></li>
                             </nav>
                         </li>
+
 
                         
 

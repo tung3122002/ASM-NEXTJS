@@ -5,11 +5,13 @@ import Tabs from 'react-bootstrap/Tabs';
 import Carousel from 'react-bootstrap/Carousel';
 import Link from 'next/link';
 import Layout from '../../components/Layout'
-import useProducts from '../../hooks/use-product';
+
 import Title from '../tit';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import useProducts from '../../hooks/use-product';
+
 type Props = {}
 
 const Product = (props: Props) => {
@@ -33,7 +35,7 @@ const Product = (props: Props) => {
         id="uncontrolled-tab-example"
         className="mb-3 justify-content-center border-none"
       >
-        <Tab eventKey="home" title="Home" className=''>
+        <Tab eventKey="home" title=" IVY moda" className=''>
           <Slider {...settings}>
             <div>
               <div className="row">
@@ -79,7 +81,7 @@ const Product = (props: Props) => {
           </Slider>
 
         </Tab>
-        <Tab eventKey="profile" title="Profile">
+        <Tab eventKey="profile" title="IVY men">
           <Slider {...settings}>
             <div>
               <div className="row">
@@ -124,7 +126,7 @@ const Product = (props: Props) => {
             </div>
           </Slider>
         </Tab>
-        <Tab eventKey="contact" title="Contact" >
+        <Tab eventKey="contact" title=" IVY kids" >
           <Slider {...settings}>
             <div>
               <div className="row">
