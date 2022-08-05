@@ -41,7 +41,7 @@ const Products = () => {
               <td>1</td>
               <td>{item.name}</td>
               <td>{item.price}</td>
-              <td><img className="w-20" src={item.img} alt="" /></td>s
+              <td><img className="w-20" src={item.img} alt="" /></td>
               <td key={item.id}>
                 <Link href={`product/${item._id}`}>Sửa</Link>
               
