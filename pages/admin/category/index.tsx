@@ -44,7 +44,7 @@ const Products = () => {
           <td>1</td>
           <td>{item.name}</td>
         
-          <td  key={item.id}><Link href={`product/${item._id}`}>Sửa</Link></td>
+          {/* <td  key={item.id}><Link href={`product/${item._id}`}>Sửa</Link></td> */}
           <button onClick={() => mutate(onhandleRemove(item._id))} className="btn btn-danger">Remove</button>
          
           </tr>
