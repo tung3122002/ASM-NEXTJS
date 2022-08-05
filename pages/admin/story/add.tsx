@@ -59,32 +59,32 @@ const AddProduct = (props: Props) => {
           type="button"
           className="inline-flex items-center px-2 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
-          Danh Sách Sản phẩm
+          Danh Sách Tin Tức
         </button>
       </Link>
       <div> <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
+          <label htmlFor="exampleInputEmail1" className="form-label">Tiêu Đề Tin Tức *</label>
           <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} />
           {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
+          <label htmlFor="exampleInputEmail1" className="form-label">Nội Dung Tin Tức *</label>
           <input type="text" className="form-control" id="exampleInputEmail1" {...register('desc')} />
           {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
+          <label htmlFor="exampleInputEmail1" className="form-label">Ngày Tháng *</label>
           <input type="text" className="form-control" id="exampleInputEmail1" {...register('times')} />
           {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">IMG</label>
+          <label htmlFor="exampleInputPassword1" className="form-label">IMG *</label>
           <label htmlFor="exampleInputEmail1">Image</label>
           <input type="file" className="form-control" {...register('img', { required: true })} placeholder="Tên sản phẩm" />
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleInputEmail1">Name category</label>
+          <label htmlFor="exampleInputEmail1"></label>
           {/* <select id="" {...register('category', { required: true })}>
             {props.categorys.map((item) => {
               return <option value={item._id}>{item.name}</option>
@@ -94,7 +94,7 @@ const AddProduct = (props: Props) => {
         <div className="form-group">
         </div>
 
-        <button type="submit" className="btn btn-primary" >Add Product</button>
+        <button type="submit" className="btn btn-primary" >Thêm Tin Tức</button>
       </form></div>
     </>
   )
