@@ -6,10 +6,32 @@ import Footer from '../../components/Footer'
 import Product from '../products'
 
 import style from './signup.module.css'
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { User } from '../../models/user';
+import { useRouter } from "next/router";
+import useUser from '../../hooks/use-user';
+import { ToastContainer, toast } from 'react-toastify';
 
 type Props = {}
 
-const Signup = (props: Props) => {
+type Frominputs = {
+    email: string,
+    password: string,
+}
+
+const Signin = (props: Props) => {
+
+    const { register, handleSubmit, formState: { errors } } = useForm<Frominputs>();
+    const router = useRouter();
+    const onSubmit: SubmitHandler<Frominputs> = data => {
+        console.log(data);
+        // router.push("/signin");
+        mutate(dangnhap(data))
+        localStorage.setItem("user", JSON.stringify(data))
+        console.log("đăng nhập thành công")
+    }
+    const {  dangnhap, mutate } = useUser();
+
     return (
         <div className='container '>
      <Head>
@@ -28,15 +50,15 @@ const Signup = (props: Props) => {
                             <br />
                             <p className='text-slate-400'>Nếu bạn đã có tài khoản, hãy đăng nhập để tích lũy điểm thành viên và nhận được những ưu đãi tốt hơn!</p>
                         </div>
-                        <form style={{ marginLeft: '10%' }}>
+                        <form onSubmit={handleSubmit(onSubmit)} style={{ marginLeft: '10%' }}>
                             <div className="mb-3 " style={{ width: '90%', padding: '8px', fontSize: '30px' }}>
 
-                                <input type="email" className="form-control : " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Email/SĐT' style={{ padding: '13px' }} />
+                                <input type="email" className="form-control : " id="exampleInputEmail1" {...register('email')} aria-describedby="emailHelp" placeholder='Email/SĐT' style={{ padding: '13px' }} />
 
                             </div>
                             <div className="mb-3 :" style={{ width: '90%', padding: '8px' }}>
 
-                                <input type="password" className="form-control" id="exampleInputPassword1" placeholder='Mật Khẩu' style={{ padding: '13px' }} />
+                                <input type="password" className="form-control" id="exampleInputPassword1" {...register('password')} placeholder='Mật Khẩu' style={{ padding: '13px' }} />
                             </div>
                             <div className="mb-3 form-check" style={{ marginLeft: '5px' }}>
                                 <input type="checkbox" className="form-check-input" id="exampleCheck1" />
@@ -75,4 +97,4 @@ const Signup = (props: Props) => {
     )
 }
 
-export default Signup
+export default Signin
