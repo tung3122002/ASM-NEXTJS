@@ -5,11 +5,13 @@ import Tabs from 'react-bootstrap/Tabs';
 import Carousel from 'react-bootstrap/Carousel';
 import Link from 'next/link';
 import Layout from '../../components/Layout'
-import useProducts from '../../hooks/use-product';
+
 import Title from '../tit';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import useProducts from '../../hooks/use-product';
+
 type Props = {}
 
 const Product = (props: Props) => {

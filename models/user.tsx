@@ -6,6 +6,5 @@ export type User ={
     phoneNumber: number,
     date: string,
     password: string,
-    password2: string,
     description: string,
   }

@@ -49,7 +49,7 @@ const category = (props: Props) => {
                         <div className="">
                                 <p>Áo polo nam</p>
                                 <p className={style.price}>520.000</p>
-                                <button className={style.click_detail} >Chi tiết sản phẩm</button>
+                                <button className={style.click_detail} ><a className={style.a} href="product_detail">Chi tiết sản phẩm</a></button>
                         </div>
                     </div>
                     </article>
@@ -62,7 +62,7 @@ const category = (props: Props) => {
                         <div className="">
                                 <p>Áo polo nam</p>
                                 <p className={style.price}>520.000</p>
-                                <button className={style.click_detail} >Chi tiết sản phẩm</button>
+                                <button className={style.click_detail} ><a className={style.a} href="product_detail">Chi tiết sản phẩm</a></button>
                         </div>
                     </div>
                     </article>
@@ -75,7 +75,7 @@ const category = (props: Props) => {
                         <div className="">
                                 <p>Áo polo nam</p>
                                 <p className={style.price}>520.000</p>
-                                <button className={style.click_detail} >Chi tiết sản phẩm</button>
+                                <button className={style.click_detail} ><a className={style.a} href="product_detail">Chi tiết sản phẩm</a></button>
                         </div>
                     </div>
                     </article>
@@ -88,7 +88,7 @@ const category = (props: Props) => {
                         <div className="">
                                 <p>Áo polo nam</p>
                                 <p className={style.price}>520.000</p>
-                                <button className={style.click_detail} >Chi tiết sản phẩm</button>
+                                <button className={style.click_detail} ><a className={style.a} href="product_detail">Chi tiết sản phẩm</a></button>
                         </div>
                     </div>
                     </article>
@@ -101,21 +101,7 @@ const category = (props: Props) => {
                         <div className="">
                                 <p>Áo polo nam</p>
                                 <p className={style.price}>520.000</p>
-                                <button className={style.click_detail} >Chi tiết sản phẩm</button>
-                        </div>
-                    </div>
-                    </article>
-                    {/*  */}
-                    {/*  */}
-                    <article className='mb-5'>
-                    <div className="products">
-                        <div className="">
-                            <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2022/05/27/9ddfb4b98bb5c5a2dc6a63d2617626ba.JPG" alt="" />
-                        </div>
-                        <div className="">
-                                <p>Áo polo nam</p>
-                                <p className={style.price}>520.000</p>
-                                <button className={style.click_detail} >Chi tiết sản phẩm</button>
+                                <button className={style.click_detail} ><a className={style.a} href="product_detail">Chi tiết sản phẩm</a></button>
                         </div>
                     </div>
                     </article>
@@ -129,7 +115,7 @@ const category = (props: Props) => {
                         <div className="">
                                 <p>Áo polo nam</p>
                                 <p className={style.price}>520.000</p>
-                                <button className={style.click_detail} >Chi tiết sản phẩm</button>
+                                <button className={style.click_detail} ><a className={style.a} href="product_detail">Chi tiết sản phẩm</a></button>
                         </div>
                     </div>
                     </article>
@@ -143,7 +129,21 @@ const category = (props: Props) => {
                         <div className="">
                                 <p>Áo polo nam</p>
                                 <p className={style.price}>520.000</p>
-                                <button className={style.click_detail} >Chi tiết sản phẩm</button>
+                                <button className={style.click_detail} ><a className={style.a} href="product_detail">Chi tiết sản phẩm</a></button>
+                        </div>
+                    </div>
+                    </article>
+                    {/*  */}
+                    {/*  */}
+                    <article className='mb-5'>
+                    <div className="products">
+                        <div className="">
+                            <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2022/05/27/9ddfb4b98bb5c5a2dc6a63d2617626ba.JPG" alt="" />
+                        </div>
+                        <div className="">
+                                <p>Áo polo nam</p>
+                                <p className={style.price}>520.000</p>
+                                <button className={style.click_detail} ><a className={style.a} href="product_detail">Chi tiết sản phẩm</a></button>
                         </div>
                     </div>
                     </article>
@@ -156,7 +156,7 @@ const category = (props: Props) => {
                         <div className="">
                                 <p>Áo polo nam</p>
                                 <p className={style.price}>520.000</p>
-                                <button className={style.click_detail} >Chi tiết sản phẩm</button>
+                                <button className={style.click_detail} ><a className={style.a} href="product_detail">Chi tiết sản phẩm</a></button>
                         </div>
                     </div>
                     </article>
@@ -170,7 +170,7 @@ const category = (props: Props) => {
                         <div className="">
                                 <p>Áo polo nam</p>
                                 <p className={style.price}>520.000</p>
-                                <button className={style.click_detail} >Chi tiết sản phẩm</button>
+                                <button className={style.click_detail} ><a className={style.a} href="product_detail">Chi tiết sản phẩm</a></button>
                         </div>
                     </div>
                     </article>
@@ -184,7 +184,7 @@ const category = (props: Props) => {
                         <div className="">
                                 <p>Áo polo nam</p>
                                 <p className={style.price}>520.000</p>
-                                <button className={style.click_detail} >Chi tiết sản phẩm</button>
+                                <button className={style.click_detail} ><a className={style.a} href="product_detail">Chi tiết sản phẩm</a></button>
                         </div>
                     </div>
                     </article>
@@ -197,7 +197,7 @@ const category = (props: Props) => {
                         <div className="">
                                 <p>Áo polo nam</p>
                                 <p className={style.price}>520.000</p>
-                                <button className={style.click_detail} >Chi tiết sản phẩm</button>
+                                <button className={style.click_detail} ><a className={style.a} href="product_detail">Chi tiết sản phẩm</a></button>
                         </div>
                     </div>
                     </article>
