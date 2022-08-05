@@ -88,6 +88,7 @@ const Header = (props: Props) => {
                             </nav>
                         </li>
 
+
                         
 
                          <i className="fa-solid fa-headphones pr-3 mt-2.5 " /> 

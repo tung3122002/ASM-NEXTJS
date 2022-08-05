@@ -7,7 +7,7 @@ type Props = {}
 const cart = (props: Props) => {
     return (
         <div>
-            
+
             <div className={style.content}>
                 <div className="">
                     <h3>Giỏ hàng của bạn</h3>
@@ -108,7 +108,9 @@ const cart = (props: Props) => {
             </div>
 
 
+
             
+
         </div>
     )
 }
