@@ -25,7 +25,7 @@ const Signin = (props: Props) => {
     const router = useRouter();
     const onSubmit: SubmitHandler<Frominputs> = data => {
         console.log(data);
-        router.push("/signin");
+        // router.push("/signin");
         mutate(dangnhap(data))
         localStorage.setItem("user", JSON.stringify(data))
         console.log("đăng nhập thành công")
