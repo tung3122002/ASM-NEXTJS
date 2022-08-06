@@ -15,7 +15,7 @@ type Props = {
 }
 type Frominputs = {
   name: string,
-  price: number,
+  price: string,
   img: string,
   category: string
 }
@@ -66,12 +66,13 @@ const AddProduct = (props: Props) => {
          <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
-          <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} />
-          {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
+          <input type="text" className="form-control" id="exampleInputEmail1" {...register('name', { required: "Vui lòng nhập tên sản phẩm" })} />
+          <div className="text-sm mt-0.5 text-red-500">{errors.name?.message}</div>
         </div>
         <div className="mb-3">
           <label htmlFor="price" className="form-label">Giá Sản Phẩm</label>
-          <input type="number" className="form-control"  {...register('price')} />
+          <input type="text" className="form-control"   {...register("price", { required: "Vui lòng nhập giá" })} />
+          <div className="text-sm mt-0.5 text-red-500">{errors.price?.message}</div>
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">IMG</label>

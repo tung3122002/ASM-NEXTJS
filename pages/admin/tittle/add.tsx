@@ -58,14 +58,21 @@ const AddProduct = (props: Props) => {
           type="button"
           className="inline-flex items-center px-2 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
-          Danh Sách Sản phẩm
+          Danh Sách tittle
         </button>
       </Link>
-      <div> <form onSubmit={handleSubmit(onSubmit)}>
+      <div> 
+        <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
-          <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} />
-          {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
+          <input
+                    type="text"
+                    {...register("name", { required: "Vui lòng nhập" })}
+                    id="form__add-user-fullname"
+                    className="py-2 px-3 mt-1 border focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    placeholder="Nhập tên đầy đủ"
+                  />
+                  <div className="text-sm mt-0.5 text-red-500">{errors.name?.message}</div>
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">IMG</label>
@@ -84,7 +91,8 @@ const AddProduct = (props: Props) => {
         </div>
 
         <button type="submit" className="btn btn-primary" >Add Product</button>
-      </form></div>
+      </form>
+      </div>
     </>
   )
 }

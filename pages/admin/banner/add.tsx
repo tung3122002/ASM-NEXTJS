@@ -55,19 +55,19 @@ const AddBanner = (props: Props) => {
   if (error) return <div>Failed to load</div>
   return (
     <>
-      <Link href="/admin/product">
+      <Link href="/admin/banner">
         <button
           type="button"
           className="inline-flex items-center px-2 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
-          Danh Sách Sản phẩm
+          Danh Sách Banner
         </button>
       </Link>
       <div> <form onSubmit={handleSubmit(onSubmit)}>
 
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
-          <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} />
+          <input type="text" className="form-control" id="exampleInputEmail1" {...register('name', { required: "Vui lòng nhập tên Banner" })} />
           {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
         </div>
         <div className="mb-3">

@@ -16,7 +16,7 @@ type ProductProps = {
 
 type FormInputs = {
   name: string,
-  price: number,
+  price: string,
   img: string,
 }
 const ProductDetail = (props: ProductProps) => {
@@ -50,23 +50,35 @@ const ProductDetail = (props: ProductProps) => {
 
     <>
       <div>{props.product.name}
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
-            <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} />
-            {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
-          </div>
-          <div className="mb-3">
-            <label htmlFor="price" className="form-label">Giá Sản Phẩm</label>
-            <input type="number" className="form-control"  {...register('price')} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">IMG</label>
-            <input type="text" className="form-control"  {...register('img')} />
-          </div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="mb-3">
+          <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
+          <input type="text" className="form-control" id="exampleInputEmail1" {...register('name', { required: "Vui lòng nhập tên sản phẩm" })} />
+          <div className="text-sm mt-0.5 text-red-500">{errors.name?.message}</div>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="price" className="form-label">Giá Sản Phẩm</label>
+          <input type="text" className="form-control"   {...register("price", { required: "Vui lòng nhập giá" })} />
+          <div className="text-sm mt-0.5 text-red-500">{errors.price?.message}</div>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleInputPassword1" className="form-label">IMG</label>
+          <label htmlFor="exampleInputEmail1">Image</label>
+          <input type="text" className="form-control" {...register('img', { required: true })} placeholder="Tên sản phẩm" />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleInputEmail1">Name category</label>
+          {/* <select id="" {...register('category', { required: true })}>
+            {props.categorys.map((item) => {
+              return <option value={item._id}>{item.name}</option>
+            })}
+          </select> */}
+        </div>
+        <div className="form-group">
+        </div>
 
-          <button type="submit" className="btn btn-primary" >Add Product</button>
-        </form></div>
+        <button type="submit" className="btn btn-primary" >Add Product</button>
+      </form></div>
     </>
   )
 }

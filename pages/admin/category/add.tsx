@@ -50,8 +50,8 @@ const AddProduct = (props: Frominputs) => {
          <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
-          <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} />
-          {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
+          <input type="text" className="form-control" id="exampleInputEmail1" {...register('name', { required: "Vui lòng nhập tên Category" })} />
+          <div className="text-sm mt-0.5 text-red-500">{errors.name?.message}</div>
         </div>
         
         <div className="form-group">

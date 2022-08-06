@@ -62,40 +62,48 @@ const AddProduct = (props: Props) => {
           Danh Sách Tin Tức
         </button>
       </Link>
-      <div> <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">Tiêu Đề Tin Tức *</label>
-          <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} />
-          {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">Nội Dung Tin Tức *</label>
-          <input type="text" className="form-control" id="exampleInputEmail1" {...register('desc')} />
-          {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">Ngày Tháng *</label>
-          <input type="text" className="form-control" id="exampleInputEmail1" {...register('times')} />
-          {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">IMG *</label>
-          <label htmlFor="exampleInputEmail1">Image</label>
-          <input type="file" className="form-control" {...register('img', { required: true })} placeholder="Tên sản phẩm" />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1"></label>
-          {/* <select id="" {...register('category', { required: true })}>
+      <div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="mb-3">
+            <label htmlFor="exampleInputEmail1" className="form-label">Tiêu Đề Tin Tức *</label>
+            <input
+              type="text"
+              {...register("name", { required: "Vui lòng nhập tên story" })}
+              id="form__add-user-fullname"
+              className="py-2 px-3 mt-1 border focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+              placeholder="Nhập tên đầy đủ"
+            />
+            <div className="text-sm mt-0.5 text-red-500">{errors.name?.message}</div>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputEmail1" className="form-label">Nội Dung Tin Tức *</label>
+            <input type="text" className="form-control" id="exampleInputEmail1"    {...register("desc", { required: "Vui lòng nhập" })} />
+            <div className="text-sm mt-0.5 text-red-500">{errors.desc?.message}</div>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputEmail1" className="form-label">Ngày Tháng *</label>
+            <input type="text" className="form-control" id="exampleInputEmail1" {...register('times', { required: "Vui lòng nhập" })} />
+            <div className="text-sm mt-0.5 text-red-500">{errors.times?.message}</div>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputPassword1" className="form-label">IMG *</label>
+            <label htmlFor="exampleInputEmail1">Image</label>
+            <input type="file" className="form-control" {...register('img', { required: true })} placeholder="Tên sản phẩm" />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputEmail1"></label>
+            {/* <select id="" {...register('category', { required: true })}>
             {props.categorys.map((item) => {
               return <option value={item._id}>{item.name}</option>
             })}
           </select> */}
-        </div>
-        <div className="form-group">
-        </div>
+          </div>
+          <div className="form-group">
+          </div>
 
-        <button type="submit" className="btn btn-primary" >Thêm Tin Tức</button>
-      </form></div>
+          <button type="submit" className="btn btn-primary" >Thêm Tin Tức</button>
+        </form>
+      </div>
     </>
   )
 }

@@ -50,19 +50,36 @@ const ProductDetail = (props: ProductProps) => {
 
     <>
       <div>{props.product.names}
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
-            <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} />
-            {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">IMG</label>
-            <input type="text" className="form-control"  {...register('img')} />
-          </div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="mb-3">
+          <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
+          <input
+                    type="text"
+                    {...register("name", { required: "Vui lòng nhập" })}
+                    id="form__add-user-fullname"
+                    className="py-2 px-3 mt-1 border focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    placeholder="Nhập tên đầy đủ"
+                  />
+                  <div className="text-sm mt-0.5 text-red-500">{errors.name?.message}</div>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleInputPassword1" className="form-label">IMG</label>
+          <label htmlFor="exampleInputEmail1">Image</label>
+          <input type="text" className="form-control" {...register('img', { required: true })} placeholder="Tên sản phẩm" />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleInputEmail1">Name category</label>
+          {/* <select id="" {...register('category', { required: true })}>
+            {props.categorys.map((item) => {
+              return <option value={item._id}>{item.name}</option>
+            })}
+          </select> */}
+        </div>
+        <div className="form-group">
+        </div>
 
-          <button type="submit" className="btn btn-primary" >Add Product</button>
-        </form></div>
+        <button type="submit" className="btn btn-primary" >Add Product</button>
+      </form></div>
     </>
   )
 }
