@@ -35,7 +35,7 @@ const Product = (props: Props) => {
         id="uncontrolled-tab-example"
         className="mb-3 justify-content-center border-none"
       >
-        <Tab eventKey="home" title="Home" className=''>
+        <Tab eventKey="home" title=" IVY moda" className=''>
           <Slider {...settings}>
             <div>
               <div className="row">
@@ -81,7 +81,7 @@ const Product = (props: Props) => {
           </Slider>
 
         </Tab>
-        <Tab eventKey="profile" title="Profile">
+        <Tab eventKey="profile" title="IVY men">
           <Slider {...settings}>
             <div>
               <div className="row">
@@ -126,7 +126,7 @@ const Product = (props: Props) => {
             </div>
           </Slider>
         </Tab>
-        <Tab eventKey="contact" title="Contact" >
+        <Tab eventKey="contact" title=" IVY kids" >
           <Slider {...settings}>
             <div>
               <div className="row">
