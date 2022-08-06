@@ -3,21 +3,23 @@ import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import { list, read } from '../../../api-client/product';
+import { liststory, readstory } from '../../../api-client/story';
 import LayoutAdmin from '../../../components/Layout/admin';
-import useProducts from '../../../hooks/use-product';
-import { Product } from '../../../models/product';
+import useStory from '../../../hooks/use-story';
+import { Story  } from '../../../models/story';
 
 type ProductProps = {
   product: any;
-  onUpdate: (product: Product) => void
+  onUpdate: (product: Story) => void
 }
 
 
 type FormInputs = {
   name: string,
-  price: number,
+  desc: string,
+  times: number,
   img: string,
+
 }
 const ProductDetail = (props: ProductProps) => {
   const { id } = useParams();
@@ -26,7 +28,7 @@ const ProductDetail = (props: ProductProps) => {
 
   useEffect(() => {
     const getProduct = async () => {
-      const { data } = await read(props.product._id);
+      const { data } = await readstory(props.product._id);
       reset(data)
 
     }
@@ -36,11 +38,11 @@ const ProductDetail = (props: ProductProps) => {
   
   const onSubmit: SubmitHandler<FormInputs> = data => {
     // console.log(data);
-    router.push("/admin/product");
+    router.push("/admin/story");
     mutate(onhandleUpdate(data))
   }
 
-  const { data, error, create, mutate, onhandleUpdate } = useProducts();
+  const { data, error, create, mutate, onhandleUpdate } = useStory();
 
 
   if (!data) return <div>Loading...</div>
@@ -49,23 +51,29 @@ const ProductDetail = (props: ProductProps) => {
   return (
 
     <>
-      <div>{props.product.name}
+      <div>{props.product.names}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">Tên Sản Phẩm</label>
+            <label htmlFor="exampleInputEmail1" className="form-label">Tiêu Đề Tin Tức *</label>
             <input type="text" className="form-control" id="exampleInputEmail1" {...register('name')} />
             {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
           </div>
           <div className="mb-3">
-            <label htmlFor="price" className="form-label">Giá Sản Phẩm</label>
-            <input type="number" className="form-control"  {...register('price')} />
+            <label htmlFor="exampleInputEmail1" className="form-label">Nội Dung Tin Tức *</label>
+            <input type="text" className="form-control" id="exampleInputEmail1" {...register('desc')} />
+            {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
           </div>
           <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">IMG</label>
+            <label htmlFor="exampleInputEmail1" className="form-label">Ngày Tháng *</label>
+            <input type="text" className="form-control" id="exampleInputEmail1" {...register('times')} />
+            {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
+          </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputPassword1" className="form-label">IMG *</label>
             <input type="text" className="form-control"  {...register('img')} />
           </div>
 
-          <button type="submit" className="btn btn-primary" >Add Product</button>
+          <button type="submit" className="btn btn-primary" >Thêm Bài Viết</button>
         </form></div>
     </>
   )
@@ -75,7 +83,7 @@ const ProductDetail = (props: ProductProps) => {
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   console.log('context', context);
   context.res.setHeader("Cache-Control", "s-maxage=10, stale-while-revalidate")
-  const product = await (await fetch(`http://localhost:8000/api/products/${context.params?.id}`)).json();
+  const product = await (await fetch(`http://localhost:8000/api/story/${context.params?.id}`)).json();
   return {
     props: { product }
   }

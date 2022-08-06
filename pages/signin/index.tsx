@@ -5,14 +5,45 @@ import style from './signin.module.css'
 
 type Props = {}
 
-const Signin = (props: Props) => {
+
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { User } from '../../models/user';
+import { useRouter } from "next/router";
+import useUser from '../../hooks/use-user';
+
+type Props = {
+    onAdd: (user: User) => void
+}
+
+
+type Frominputs = {
+    name: string,
+    lastName: string,
+    email: string,
+    phoneNumber: number,
+    date: string,
+    password: string,
+    description: string,
+}
+
+
+const Signup = (props: Props) => {
+    const { register, handleSubmit, formState: { errors } } = useForm<Frominputs>();
+    const router = useRouter();
+    const onSubmit: SubmitHandler<Frominputs> = data => {
+        console.log(data);
+        router.push("/signup");
+        mutate(dangky(data))
+    }
+    const { dangky, mutate } = useUser();
+
     return (
         <div className='container '>
-     <Head>
-        <title>LOGO</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossOrigin="anonymous" referrerPolicy='no-referrer' />
-      </Head>
+            <Head>
+                <title>LOGO</title>
+                <link rel="icon" href="/favicon.ico" />
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossOrigin="anonymous" referrerPolicy='no-referrer' />
+            </Head>
             <div className=' relative mt-10 ' >
 
                 <br />
@@ -27,7 +58,9 @@ const Signin = (props: Props) => {
                             <div className='col'>
                                 <div className="mb-3" >
                                     <label htmlFor="exampleInputEmail1" className="form-label">Họ:*</label>
+
                                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
+
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Email:*</label>
@@ -35,9 +68,11 @@ const Signin = (props: Props) => {
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Ngày sinh:*</label>
+
                                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
-                               
+
+
                                 <div className="mb-3">
                                     <label htmlFor="disabledSelect" className="form-label">Tỉnh/TP:*</label>
                                     <select id="disabledSelect" className="form-select" style={{ padding: '11px' }}>
@@ -50,11 +85,13 @@ const Signin = (props: Props) => {
                             <div className='col'>
                                 <div className="mb-3" >
                                     <label htmlFor="exampleInputEmail1" className="form-label">Tên:*</label>
+
                                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Điện thoại:*</label>
                                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '11px' }} />
+
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="disabledSelect" className="form-label">Giới tính:*</label>
@@ -76,60 +113,59 @@ const Signin = (props: Props) => {
                                 <label htmlFor="exampleFormControlTextarea1" className="form-label">Địa chỉ:*</label>
                                 <textarea className="form-control" id="exampleFormControlTextarea1"></textarea>
                             </div>
-                        </form>
+                            <div className="col ">
+                                <h4>Thông tin mật khẩu</h4>
+                                <br />
 
-                    </div>
-                    <div className="col ">
-                        <h4>Thông tin mật khẩu</h4>
-                        <br />
-                        <form style={{ marginTop: '10px' }}>
-                            <div className=''>
-                                <div className="mb-3" >
-                                    <label htmlFor="exampleInputEmail1" className="form-label">Mật khẩu:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
-                                </div>
-                                <div className="mb-3">
-                                    <label htmlFor="exampleInputEmail1" className="form-label">Nhập lại mật khẩu:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
-                                </div>
-                                <div className="mb-3">
-                                    <label htmlFor="exampleInputEmail1" className="form-label">Mời nhập các ký tự trong hình vào ô sau:*</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
-                                </div>
-                                <div style={{ border: '1px solid #000', width: '100px', marginTop: '20px' }}>
-                                    <img src="https://ivymoda.com/ajax/captcha" alt="" />
-                                </div>
-                                <div style={{ marginTop: '10px' }}>
-                                    <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
-                                        <label className="form-check-label" htmlFor="flexCheckIndeterminate">
-                                        Đồng ý với các điều khoản của IVY
-                                        </label>
+                                <div className=''>
+                                    <div className="mb-3" >
+                                        <label htmlFor="exampleInputEmail1" className="form-label">Mật khẩu:*</label>
+                                        <input type="password" className="form-control" id="exampleInputEmail1" {...register('password')} aria-describedby="emailHelp" style={{ padding: '10px' }} />
                                     </div>
-                                    <div className="form-check" >
-                                        <input className="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
-                                        <label className="form-check-label" htmlFor="flexCheckIndeterminate">
-                                        Đăng ký nhận bản tin
-                                        </label>
+                                    <div className="mb-3">
+                                        <label htmlFor="exampleInputEmail1" className="form-label">Nhập lại mật khẩu:*</label>
+                                        <input type="password" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ padding: '10px' }} />
                                     </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="exampleInputEmail1" className="form-label">Mời nhập các ký tự trong hình vào ô sau:*</label>
+                                        <input type="text" className="form-control" id="exampleInputEmail1"  aria-describedby="emailHelp" style={{ padding: '10px' }} />
+                                    </div>
+                                    <div style={{ border: '1px solid #000', width: '100px', marginTop: '20px' }}>
+                                        <img src="https://ivymoda.com/ajax/captcha" alt="" />
+                                    </div>
+                                    <div style={{ marginTop: '10px' }}>
+                                        <div className="form-check">
+                                            <input className="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
+                                            <label className="form-check-label" htmlFor="flexCheckIndeterminate">
+                                                Đồng ý với các điều khoản của IVY
+                                            </label>
+                                        </div>
+                                        <div className="form-check" >
+                                            <input className="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
+                                            <label className="form-check-label" htmlFor="flexCheckIndeterminate">
+                                                Đăng ký nhận bản tin
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+
                                 </div>
 
+                                <button type="submit" className={style.loginbtns}  >
+                                    ĐĂNG KÝ.
+                                </button>
 
                             </div>
+                            <button type="submit" className={style.loginbtns}  >
+                                ĐĂNG KÝ
+                            </button>
                         </form>
-                        <button type="submit" className={style.loginbtns}  >
-                            ĐĂNG KÝ
-                        </button>
+
                     </div>
-
                 </div>
-            </div>
-
-
-
-
-           
-        </div>
+            </div >
+        </div >
     )
 }
 

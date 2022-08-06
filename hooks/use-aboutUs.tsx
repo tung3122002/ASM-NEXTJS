@@ -1,31 +1,30 @@
 
 import { toast } from "react-toastify";
 import useSWR, { useSWRConfig } from "swr";
-import { addct, listct, removect, updatect } from "../api-client/category";
+import { add, list, remove, update } from "../api-client/aboutUs";
 
 
-
-const useCategory = () => {
+const useAboutUs = () => {
     // swr - api
  
     const fetcher = async (url: string) => {
-        const { data } = await listct(url);
+        const { data } = await list(url);
         return data;
     };
 
-    const { data, error, mutate } = useSWR("/category", fetcher, {
+    const { data, error, mutate } = useSWR("/aboutUs", fetcher, {
         dedupingInterval: 5000,
     });
 
     // create
     const create = async (item) => {
-        const { data: product } = await addct (item);
+        const { data: product } = await add(item);
         return [...data, product];
     };
     // update
-    const onhandleUpdate= async (product ) =>{
+    const onhandleUpdate= async (aboutUS ) =>{
         
-       const { data } = await updatect (product)
+       const { data } = await update(aboutUS)
        console.log({ data })
         // return(data.map(item => item._id == data._id ? data : item));
       }
@@ -34,7 +33,7 @@ const useCategory = () => {
      
       if  (confirm("Bạn Muốn Xóa Ko?") ==  true) {
         alert("Xóa thành công")
-        await removect (id);  
+        await remove(id);  
         return (data.filter(item=>item._id !==id));
        
     } else {
@@ -53,4 +52,4 @@ const useCategory = () => {
     };
 };
 
-export default useCategory
+export default useAboutUs
