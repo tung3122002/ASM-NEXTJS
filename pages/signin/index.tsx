@@ -152,9 +152,7 @@ const Signup = (props: Props) => {
 
                                 </div>
 
-                                <button type="submit" className={style.loginbtns}  >
-                                    ĐĂNG KÝ.
-                                </button>
+                             
 
                             </div>
                             <button type="submit" className={style.loginbtns}  >
@@ -169,4 +167,4 @@ const Signup = (props: Props) => {
     )
 }
 
-export default Signin
+export default Signup
