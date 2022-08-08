@@ -39,9 +39,11 @@ const Product = (props: Props) => {
           <Slider {...settings}>
             <div>
               <div className="row">
-                {data.map((items) => (
-                  <Link key={items._id} href={`products/${items._id}`}>
-                    <div className="col-3 box relative  ">
+                {data.map((items:any) => ( 
+                <div key={items._id} className="col-3 box relative  ">
+                    <form action="" >
+               
+                   
                       <div className="overflow-hidden">
                         <span className="absolute right-5 top-1 text-[16px] font-semibold text-white	 bg-[#E7973E] w-12 h-12  leading-[48px] text-center rounded-full">
                           20%
@@ -57,27 +59,18 @@ const Product = (props: Props) => {
                         </div>
                       </div>
 
-                    </div></Link>
+                      <div className="conten-item ">
+                                <button>Add to cart</button>
+                            </div>
+                    
+                    </form>
+                    </div>
                 ))}
 
               </div>
 
             </div>
-            <div>
-              <h3>2</h3>
-            </div>
-            <div>
-              <h3>3</h3>
-            </div>
-            <div>
-              <h3>4</h3>
-            </div>
-            <div>
-              <h3>5</h3>
-            </div>
-            <div>
-              <h3>6</h3>
-            </div>
+            
           </Slider>
 
         </Tab>
@@ -109,21 +102,7 @@ const Product = (props: Props) => {
               </div>
 
             </div>
-            <div>
-              <h3>2</h3>
-            </div>
-            <div>
-              <h3>3</h3>
-            </div>
-            <div>
-              <h3>4</h3>
-            </div>
-            <div>
-              <h3>5</h3>
-            </div>
-            <div>
-              <h3>6</h3>
-            </div>
+           
           </Slider>
         </Tab>
         <Tab eventKey="contact" title=" IVY kids" >
