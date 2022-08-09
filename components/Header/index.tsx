@@ -80,7 +80,7 @@ const Header = (props: Props) => {
                     </form>
 
                     <div  className="mr-14" style={{display:'flex'}}>
-                        <Link href=''><i className="fa-solid fa-cart-shopping pr-3 : mt-2.5" /></Link>
+                        <Link href='cart'><i className="fa-solid fa-cart-shopping pr-3 : mt-2.5" /></Link>
                         <li style={{listStyle:'none'}} className={style.hovermenu}><a className=" p-2 no-underline text-[15px] text-[#212529]  font-semibold" href=""><i className="fa-solid fa-user pr-3" /></a>
                             <nav className={style.dropdown}>
                                 <li><p>Xin Chào :</p></li>

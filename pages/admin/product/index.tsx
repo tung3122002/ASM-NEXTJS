@@ -28,7 +28,7 @@ const Products = () => {
             <th>#</th>
             <th>Tên Sản Phẩm</th>
             <th>Price</th>
-            <th>Color</th>
+            <th>Category</th>
             <th>Quantity</th>
             <th>Action</th>
           </tr>
@@ -41,6 +41,7 @@ const Products = () => {
               <td>1</td>
               <td>{item.name}</td>
               <td>{item.price}</td>
+              <td>{item.category}</td>
               <td><img className="w-20" src={item.img} alt="" /></td>
               <td key={item.id}>
                 <Link href={`product/${item._id}`}>Sửa</Link>

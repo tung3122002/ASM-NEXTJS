@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { list, read } from '../../../api-client/product';
 import LayoutAdmin from '../../../components/Layout/admin';
+import useCategory from '../../../hooks/use-category';
 import useProducts from '../../../hooks/use-product';
 import { Product } from '../../../models/product';
 
@@ -42,7 +43,7 @@ const ProductDetail = (props: ProductProps) => {
 
   const { data, error, create, mutate, onhandleUpdate } = useProducts();
 
-
+  const {data:categories} = useCategory()
   if (!data) return <div>Loading...</div>
   if (error) return <div>Failed to load</div>
   if (!props) return null;
@@ -66,14 +67,15 @@ const ProductDetail = (props: ProductProps) => {
           <label htmlFor="exampleInputEmail1">Image</label>
           <input type="text" className="form-control" {...register('img', { required: true })} placeholder="Tên sản phẩm" />
         </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1">Name category</label>
-          {/* <select id="" {...register('category', { required: true })}>
-            {props.categorys.map((item) => {
-              return <option value={item._id}>{item.name}</option>
-            })}
-          </select> */}
-        </div>
+        <div className="col-span-6 sm:col-span-4 pb-[30px] ">
+                    <label className="block text-sm font-medium text-gray-700 ">Category</label>
+                    <select className="form-select mb-3" {...register('category',{required:true})}  aria-label="Default select example">
+                        <option value="">Chọn danh mục</option>
+                        {categories?.map((item:any)=>(
+                             <option key={item._id} value={item._id}>{item.name}</option>
+                        ))}
+                    </select>
+                </div>
         <div className="form-group">
         </div>
 

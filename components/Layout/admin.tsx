@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react'
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -8,6 +9,11 @@ import { LayoutProps } from '../../models/layout'
 const LayoutAdmin = ({ children }: LayoutProps) => {
   return (
     <div className="container flex">
+      <Head>
+        <title>LOGO</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossOrigin="anonymous" referrerPolicy='no-referrer' />
+      </Head>
       <nav className="dashboard__sidebar fixed top-0 left-0 z-20 h-full pb-10 overflow-x-hidden overflow-y-auto transition origin-left transform bg-gray-900 w-60 md:translate-x-0 -translate-x-full">
         <Link href="/">
           <span className="flex items-center p-4 text-white font-bold text-3xl cursor-pointer">IVY moda</span>
@@ -29,7 +35,7 @@ const LayoutAdmin = ({ children }: LayoutProps) => {
           <Link href="/admin/product">
             <span className="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200">
               <div className="shrink-0 w-5 h-5 mr-2 text-gray-300 transition group-hover:text-gray-300">
-                icon
+              <i className="fa-solid fa-bell"></i>
               </div>
               <span>Products</span>
             </span>
@@ -37,7 +43,7 @@ const LayoutAdmin = ({ children }: LayoutProps) => {
           <Link href="/admin/category">
             <span className="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200">
               <div className="shrink-0 w-5 h-5 mr-2 text-gray-300 transition group-hover:text-gray-300">
-                icon
+              <i className="fa-solid fa-bell"></i>
               </div>
               <span>Category</span>
             </span>
@@ -45,7 +51,7 @@ const LayoutAdmin = ({ children }: LayoutProps) => {
           <Link href="/admin/tittle">
             <span className="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200">
               <div className="shrink-0 w-5 h-5 mr-2 text-gray-300 transition group-hover:text-gray-300">
-                icon
+              <i className="fa-solid fa-bell"></i>
               </div>
               <span>Tittle</span>
             </span>
@@ -53,7 +59,7 @@ const LayoutAdmin = ({ children }: LayoutProps) => {
           <Link href="/admin/banner">
             <span className="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200">
               <div className="shrink-0 w-5 h-5 mr-2 text-gray-300 transition group-hover:text-gray-300">
-                icon
+              <i className="fa-solid fa-image"></i>
               </div>
               <span>Banner</span>
             </span>
@@ -65,7 +71,7 @@ const LayoutAdmin = ({ children }: LayoutProps) => {
 
             <span className="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200">
               <div className="shrink-0 w-5 h-5 mr-2 text-gray-300 transition group-hover:text-gray-300">
-                icon
+              <i className="fa-solid fa-newspaper"></i>
               </div>
 
               <span>Tin Tức</span>
@@ -76,7 +82,7 @@ const LayoutAdmin = ({ children }: LayoutProps) => {
           <Link href="/admin/user">
             <span className="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200">
               <div className="shrink-0 w-5 h-5 mr-2 text-gray-300 transition group-hover:text-gray-300">
-                icon
+              <i className="fa-solid fa-user"></i>
               </div>
               <span>User</span>
             </span>
@@ -87,7 +93,7 @@ const LayoutAdmin = ({ children }: LayoutProps) => {
 
 <span className="flex items-center px-4 py-3 transition cursor-pointer group hover:bg-gray-800 hover:text-gray-200">
   <div className="shrink-0 w-5 h-5 mr-2 text-gray-300 transition group-hover:text-gray-300">
-    icon
+  <i className="fa-solid fa-bell"></i>
   </div>
 
   <span>About</span>

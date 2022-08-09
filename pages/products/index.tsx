@@ -43,7 +43,7 @@ const Product = (props: Props) => {
                 <div key={items._id} className="col-3 box relative  ">
                     <form action="" >
                
-                   
+                    <Link key={items._id} href={`products/${items._id}`}>
                       <div className="overflow-hidden">
                         <span className="absolute right-5 top-1 text-[16px] font-semibold text-white	 bg-[#E7973E] w-12 h-12  leading-[48px] text-center rounded-full">
                           20%
@@ -58,7 +58,7 @@ const Product = (props: Props) => {
                           <b>{items.price}đ</b>
                         </div>
                       </div>
-
+                      </Link>
                       <div className="conten-item ">
                                 <button>Add to cart</button>
                             </div>
